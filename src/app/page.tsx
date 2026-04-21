@@ -49,100 +49,113 @@ export default async function Home() {
     <>
       <Nav />
 
-      {/* ── Hero ── */}
-      <section className="pt-16 min-h-screen bg-[#F2EDE0] flex flex-col">
-        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2">
+      {/* ── Hero — full-screen cinematic video ── */}
+      <section className="relative bg-[#0D0D0D] overflow-hidden" style={{ height: "100vh", minHeight: "600px" }}>
 
-          {/* LEFT — YouTube embed */}
-          <div className="relative bg-[#0D0D0D] min-h-[400px] lg:min-h-0 overflow-hidden flex items-center justify-center">
-            <div className="absolute inset-0">
-              <iframe
-                src={`https://www.youtube.com/embed/${HERO_VIDEO_ID}?autoplay=0&rel=0&modestbranding=1&color=white`}
-                title="REI Baddies Talk Show — Featured Episode"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-                style={{ border: "none" }}
-              />
-            </div>
-          </div>
+        {/* YouTube iframe — fills 100% of section */}
+        <div className="absolute inset-0 w-full h-full">
+          <iframe
+            src={`https://www.youtube.com/embed/${HERO_VIDEO_ID}?autoplay=0&rel=0&modestbranding=1&color=white&iv_load_policy=3`}
+            title="REI Baddies Talk Show — Featured Episode"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="w-full h-full"
+            style={{ border: "none" }}
+          />
+        </div>
 
-          {/* RIGHT — Text & CTAs */}
-          <div className="flex flex-col justify-center px-8 md:px-14 py-16 lg:py-24">
+        {/* Top gradient — protects nav readability */}
+        <div
+          className="absolute top-0 left-0 right-0 h-32 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, rgba(13,13,13,0.7) 0%, transparent 100%)" }}
+        />
+
+        {/* Bottom gradient — text overlay area */}
+        <div
+          className="absolute bottom-0 left-0 right-0 pointer-events-none"
+          style={{ height: "45%", background: "linear-gradient(to top, rgba(13,13,13,0.97) 0%, rgba(13,13,13,0.7) 60%, transparent 100%)" }}
+        />
+
+        {/* Overlay content — pinned to bottom */}
+        <div className="absolute bottom-0 left-0 right-0 px-8 md:px-14 pb-10 pointer-events-none">
+          <div className="max-w-7xl mx-auto">
+            {/* Badge */}
             <div
-              className="inline-flex items-center gap-2 bg-[#B5D334] text-[#0D0D0D] text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full border-2 border-[#0D0D0D] w-fit mb-8"
+              className="inline-flex items-center gap-2 bg-[#B5D334] text-[#0D0D0D] text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full border-2 border-[#0D0D0D] mb-5 pointer-events-auto"
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
-              <StarAccent size={12} color="#0D0D0D" />
+              <StarAccent size={10} color="#0D0D0D" />
               REI Baddies Talk Show
             </div>
 
+            {/* Headline */}
             <h1
-              className="font-display leading-[0.92] mb-6"
+              className="font-display font-black text-white leading-[0.88] mb-5"
               style={{
                 fontFamily: "'Fraunces', serif",
-                fontSize: "clamp(3rem, 6vw, 6rem)",
+                fontSize: "clamp(3.5rem, 8vw, 8rem)",
                 fontWeight: 900,
+                textShadow: "0 2px 20px rgba(0,0,0,0.5)",
               }}
             >
-              <span className="block text-[#0D0D0D]">Real</span>
-              <span className="block text-[#E8176A] italic">Stories.</span>
-              <span className="block text-[#0D0D0D]">Real</span>
-              <span className="block text-[#B5D334] italic">Deals.</span>
+              Real <em className="text-[#E8176A]">Stories.</em>{" "}
+              Real <em className="text-[#B5D334]">Deals.</em>
             </h1>
 
-            <p
-              className="text-lg text-[#0D0D0D]/70 mb-10 max-w-md leading-relaxed"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
-            >
-              Hosted by <strong>Rachel Davis & Kate Baldwin</strong> — two operators
-              who&apos;ve done the deals, made the mistakes, and lived to tell you
-              about it. With receipts, not fluff.
-            </p>
+            {/* Sub + CTAs row */}
+            <div className="flex flex-col sm:flex-row sm:items-end gap-6 justify-between">
+              <p
+                className="text-[#F2EDE0]/80 text-lg max-w-xl leading-relaxed"
+                style={{ fontFamily: "'DM Sans', sans-serif" }}
+              >
+                Hosted by <strong className="text-white">Rachel Davis & Kate Baldwin</strong> — operators who do the deals and share the receipts. No fluff.
+              </p>
 
-            <div className="flex flex-wrap gap-4">
-              <a
-                href={`https://www.youtube.com/watch?v=${HERO_VIDEO_ID}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#E8176A] text-white font-semibold px-8 py-4 rounded-full border-2 border-[#0D0D0D] hover:bg-[#0D0D0D] transition-all text-base hover-lift"
-                style={{ fontFamily: "'DM Sans', sans-serif" }}
-              >
-                Watch Now →
-              </a>
-              <Link
-                href="/about"
-                className="bg-transparent text-[#0D0D0D] font-semibold px-8 py-4 rounded-full border-2 border-[#0D0D0D] hover:bg-[#0D0D0D] hover:text-[#F2EDE0] transition-all text-base"
-                style={{ fontFamily: "'DM Sans', sans-serif" }}
-              >
-                Meet the Hosts
-              </Link>
+              <div className="flex flex-wrap gap-3 shrink-0 pointer-events-auto">
+                <a
+                  href={`https://www.youtube.com/watch?v=${HERO_VIDEO_ID}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#E8176A] text-white font-semibold px-7 py-3.5 rounded-full border-2 border-[#E8176A] hover:bg-white hover:text-[#0D0D0D] hover:border-white transition-all text-sm hover-lift"
+                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  Watch Full Episode →
+                </a>
+                <Link
+                  href="/show"
+                  className="bg-transparent text-white font-semibold px-7 py-3.5 rounded-full border-2 border-white/40 hover:border-white hover:bg-white/10 transition-all text-sm"
+                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  All Episodes
+                </Link>
+              </div>
             </div>
 
-            {/* Channel stats row */}
-            <div className="flex gap-8 mt-10 pt-8 border-t-2 border-[#0D0D0D]/10">
+            {/* Stats strip */}
+            <div className="flex gap-8 mt-6 pt-5 border-t border-white/10 pointer-events-auto">
               {[
                 { value: "100+", label: "Episodes" },
                 { value: "1M+", label: "Downloads" },
                 { value: "2,500+", label: "Reviews" },
+                { value: "3", label: "Show Formats" },
               ].map((s) => (
                 <div key={s.label}>
-                  <p
-                    className="font-display font-black text-2xl text-[#E8176A]"
-                    style={{ fontFamily: "'Fraunces', serif" }}
-                  >
+                  <p className="font-display font-black text-2xl text-[#B5D334]" style={{ fontFamily: "'Fraunces', serif" }}>
                     {s.value}
                   </p>
-                  <p
-                    className="text-xs uppercase tracking-widest text-[#0D0D0D]/50"
-                    style={{ fontFamily: "'DM Sans', sans-serif" }}
-                  >
+                  <p className="text-xs uppercase tracking-widest text-white/40" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                     {s.label}
                   </p>
                 </div>
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 right-8 flex flex-col items-center gap-1.5 opacity-40">
+          <div className="w-px h-10 bg-white" style={{ animation: "pulse 2s infinite" }} />
+          <p className="text-white text-[10px] uppercase tracking-widest" style={{ fontFamily: "'DM Sans', sans-serif" }}>Scroll</p>
         </div>
       </section>
 
