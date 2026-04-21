@@ -77,37 +77,46 @@ export default function AboutPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="pt-16 bg-[#F2EDE0]">
-        <div className="max-w-7xl mx-auto px-6 py-20 text-center">
+      <section className="pt-16 bg-[#0D0D0D] relative overflow-hidden" style={{ minHeight: "85vh" }}>
+        {/* Full-bleed photo */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hosts/rachel-and-kate.png"
+            alt="Rachel Davis and Kate Baldwin"
+            fill
+            className="object-cover object-center"
+            style={{ opacity: 0.65 }}
+            priority
+          />
           <div
-            className="inline-flex items-center gap-2 bg-[#E8176A] text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full border-2 border-[#0D0D0D] mb-8"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
-          >
-            <StarAccent size={12} color="#FFFFFF" />
-            Meet the Hosts
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to bottom, rgba(13,13,13,0.3) 0%, rgba(13,13,13,0.15) 40%, rgba(13,13,13,0.92) 100%)" }}
+          />
+        </div>
+
+        {/* Text pinned to bottom */}
+        <div className="absolute bottom-0 left-0 right-0 px-8 md:px-14 pb-12">
+          <div className="max-w-7xl mx-auto">
+            <p
+              className="text-xs uppercase tracking-widest font-semibold text-[#B5D334] mb-4"
+              style={{ fontFamily: "'DM Sans', sans-serif" }}
+            >
+              ✦ Rachel Davis & Kate Baldwin
+            </p>
+            <h1
+              className="font-display font-black text-white leading-[0.85]"
+              style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(5rem, 14vw, 13rem)", fontWeight: 900 }}
+            >
+              <span className="block">The</span>
+              <span className="block italic text-[#E8176A] -mt-2">Baddies</span>
+            </h1>
+            <p
+              className="text-[#F2EDE0]/70 text-lg mt-4 max-w-lg"
+              style={{ fontFamily: "'DM Sans', sans-serif" }}
+            >
+              Two operators. Real deals. No fluff.
+            </p>
           </div>
-          <h1
-            className="font-display font-black leading-[0.92] mb-6"
-            style={{
-              fontFamily: "'Fraunces', serif",
-              fontSize: "clamp(3rem, 8vw, 7rem)",
-              fontWeight: 900,
-            }}
-          >
-            <span className="block text-[#0D0D0D]">The</span>
-            <span className="block text-[#E8176A] italic">Baddies</span>
-            <span className="block text-[#0D0D0D]">Behind</span>
-            <span className="block text-[#B5D334] italic">the Show</span>
-          </h1>
-          <div className="relative w-72 h-72 mx-auto mb-8 rounded-3xl border-2 border-[#0D0D0D] overflow-hidden">
-            <Image src="/images/hosts/rachel-and-kate.png" alt="Rachel Davis and Kate Baldwin at the Super Bowl" fill className="object-cover object-center" />
-          </div>
-          <p
-            className="text-xl text-[#0D0D0D]/70 max-w-2xl mx-auto leading-relaxed"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
-          >
-            An Army veteran who closed a deal at Everest Base Camp. A Key West native who went top 3% in real estate year one. Together, they built REI Baddies Talk Show — with receipts, not fluff.
-          </p>
         </div>
       </section>
 

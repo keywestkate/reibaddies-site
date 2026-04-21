@@ -52,25 +52,24 @@ export default async function Home() {
     <>
       <Nav />
 
-      {/* ── Hero — full-screen cinematic video ── */}
-      <section className="relative bg-[#0D0D0D] overflow-hidden" style={{ height: "100vh", minHeight: "600px" }}>
+      {/* ── Hero — full 16:9 video, no cropping ── */}
+      <section className="relative bg-[#0D0D0D] overflow-hidden w-full" style={{ paddingBottom: "56.25%", minHeight: "400px" }}>
 
-        {/* YouTube iframe — 16:9 centered so all people are visible */}
-        <div className="absolute inset-0 w-full h-full flex items-center justify-center overflow-hidden">
-          <iframe
-            src={`https://www.youtube.com/embed/${HERO_VIDEO_ID}?autoplay=0&rel=0&modestbranding=1&color=white&iv_load_policy=3`}
-            title="REI Baddies Talk Show — Featured Episode"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            style={{
-              border: "none",
-              width: "177.78vh",   /* 16/9 × 100vh — always wider than viewport */
-              minWidth: "100%",
-              height: "100%",
-              minHeight: "56.25vw", /* 9/16 × 100vw — always taller than viewport */
-            }}
-          />
-        </div>
+        {/* YouTube iframe — full 16:9, no cropping */}
+        <iframe
+          src={`https://www.youtube.com/embed/${HERO_VIDEO_ID}?autoplay=0&rel=0&modestbranding=1&color=white&iv_load_policy=3`}
+          title="REI Baddies Talk Show — Featured Episode"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          style={{
+            border: "none",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+          }}
+        />
 
         {/* Top gradient — protects nav readability */}
         <div
@@ -101,13 +100,14 @@ export default async function Home() {
               className="font-display font-black text-white leading-[0.88] mb-5"
               style={{
                 fontFamily: "'Fraunces', serif",
-                fontSize: "clamp(3.5rem, 8vw, 8rem)",
+                fontSize: "clamp(3rem, 7vw, 7rem)",
                 fontWeight: 900,
                 textShadow: "0 2px 20px rgba(0,0,0,0.5)",
               }}
             >
-              <span className="block">Real <em className="text-[#E8176A]">Stories.</em></span>
-              <span className="block">Real <em className="text-[#B5D334]">Deals.</em></span>
+              <span className="block">Welcome to</span>
+              <span className="block italic text-[#E8176A]">Baddie Nation</span>
+              <span className="block text-[#B5D334] text-[0.55em] italic mt-1">where real estate gets real.</span>
             </h1>
 
             {/* Sub + CTAs row */}
