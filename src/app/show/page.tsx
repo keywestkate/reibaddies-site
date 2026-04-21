@@ -17,10 +17,6 @@ const dealSauce = [
   { number: "DS 20", title: "Co-Living Math: 3BR House → 6 Rooms → $5,400/mo", duration: "22 min" },
 ];
 
-const afterDark = [
-  { number: "AD 08", title: "After Dark: Live Pitch — Short-Term Rental SubTo", duration: "61 min" },
-  { number: "AD 07", title: "After Dark: Pitch Your Novation Deal", duration: "58 min" },
-];
 
 export default async function ShowPage() {
   const interviews = await getLatestInterviews(3);
@@ -238,46 +234,6 @@ export default async function ShowPage() {
         </div>
       </section>
 
-      {/* ── After Dark ── */}
-      <section id="after-dark" className="py-20 px-6 bg-[#2A5C2E]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <span
-              className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full border-2 border-[#B5D334] bg-[#B5D334] text-[#0D0D0D] mb-4"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
-            >
-              After Dark
-            </span>
-            <h2
-              className="font-display font-black text-white leading-tight mb-4"
-              style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)", fontWeight: 900 }}
-            >
-              Bring Your Deal.<br />
-              <em className="text-[#B5D334]">Get Real Feedback.</em>
-            </h2>
-            <p
-              className="text-[#F2EDE0]/70 text-base leading-relaxed mb-6 max-w-md"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
-            >
-              A live pitch room where investors present their real deals and Rachel & Kate give it to them straight. Raw, unfiltered, invaluable.
-            </p>
-          </div>
-          <div className="flex flex-col gap-4">
-            {afterDark.map((ep) => (
-              <div key={ep.number} className="flex items-center gap-4 p-5 bg-white rounded-2xl border-2 border-[#0D0D0D] hover-lift cursor-pointer group">
-                <div className="w-10 h-10 rounded-full bg-[#2A5C2E] border-2 border-[#0D0D0D] flex items-center justify-center shrink-0 group-hover:bg-[#B5D334] transition-colors">
-                  <svg width="12" height="12" viewBox="0 0 16 16" fill="white"><polygon points="3,1 13,8 3,15" /></svg>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#B5D334] mb-0.5" style={{ fontFamily: "'DM Sans', sans-serif" }}>{ep.number}</p>
-                  <p className="font-display font-bold text-[#0D0D0D] text-base truncate" style={{ fontFamily: "'Fraunces', serif" }}>{ep.title}</p>
-                </div>
-                <p className="text-xs text-[#0D0D0D]/50 shrink-0" style={{ fontFamily: "'DM Sans', sans-serif" }}>{ep.duration}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <Marquee bgColor="#E8176A" textColor="#FFFFFF" />
       <Footer />
