@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const links = [
   { href: "/", label: "Home" },
@@ -19,8 +20,11 @@ export default function Nav() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#F2EDE0] border-b-2 border-[#0D0D0D]">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
-        <Link href="/" className="font-display font-black text-xl tracking-tight text-[#0D0D0D] hover:text-[#E8176A] transition-colors" style={{ fontFamily: "'Fraunces', serif" }}>
-          REI<span className="text-[#E8176A]">Baddies</span>
+        <Link href="/" className="flex items-center gap-2">
+          <Image src="/images/logo.png" alt="REI Baddies Talk Show" width={44} height={44} className="rounded-full" />
+          <span className="font-display font-black text-lg tracking-tight text-[#0D0D0D] hover:text-[#E8176A] transition-colors hidden sm:block" style={{ fontFamily: "'Fraunces', serif" }}>
+            REI<span className="text-[#E8176A]">Baddies</span>
+          </span>
         </Link>
 
         {/* Desktop links */}

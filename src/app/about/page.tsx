@@ -2,13 +2,14 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Marquee from "@/components/Marquee";
 import StarAccent from "@/components/StarAccent";
+import Image from "next/image";
 import Link from "next/link";
 
 const hosts = [
   {
     name: "Rachel Davis",
     role: "Co-Host & Creative Finance Investor",
-    imgSlot: "public/images/hosts/rachel.jpg",
+    imgSlot: "images/hosts/rachel.jpg",
     color: "#E8176A",
     tagText: "#FFFFFF",
     headline: "Veteran. Everest Trekker. Deal Closer.",
@@ -37,7 +38,7 @@ const hosts = [
   {
     name: "Kate Baldwin",
     role: "Co-Host, Luxury Agent & Capital Raiser",
-    imgSlot: "public/images/hosts/kate.jpg",
+    imgSlot: "images/hosts/kate.jpg",
     color: "#B5D334",
     tagText: "#0D0D0D",
     headline: "Key West Native. Entrepreneur. Baddie.",
@@ -94,6 +95,9 @@ export default function AboutPage() {
             <span className="block text-[#0D0D0D]">Behind</span>
             <span className="block text-[#B5D334] italic">the Show</span>
           </h1>
+          <div className="relative w-72 h-72 mx-auto mb-8 rounded-3xl border-2 border-[#0D0D0D] overflow-hidden">
+            <Image src="/images/hosts/rachel-and-kate.png" alt="Rachel Davis and Kate Baldwin at the Super Bowl" fill className="object-cover object-center" />
+          </div>
           <p
             className="text-xl text-[#0D0D0D]/70 max-w-2xl mx-auto leading-relaxed"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
@@ -114,16 +118,8 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Photo slot */}
             <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-              <div
-                className="relative w-full aspect-[3/4] rounded-3xl border-2 border-[#0D0D0D] overflow-hidden flex items-center justify-center max-w-sm mx-auto lg:mx-0"
-                style={{ backgroundColor: host.color + "22" }}
-              >
-                <div className="text-center text-[#0D0D0D]/30 p-8">
-                  <div className="text-6xl mb-4">📸</div>
-                  <p className="text-xs" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                    {host.name} photo<br />({host.imgSlot})
-                  </p>
-                </div>
+              <div className="relative w-full aspect-[3/4] rounded-3xl border-2 border-[#0D0D0D] overflow-hidden max-w-sm mx-auto lg:mx-0">
+                <Image src={`/${host.imgSlot}`} alt={host.name} fill className="object-cover object-top" />
                 <div
                   className="absolute top-0 right-0 w-20 h-20 rounded-bl-3xl border-b-2 border-l-2 border-[#0D0D0D] flex items-center justify-center"
                   style={{ backgroundColor: host.color }}

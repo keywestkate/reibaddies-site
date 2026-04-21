@@ -1,4 +1,5 @@
 import StarAccent from "@/components/StarAccent";
+import Image from "next/image";
 
 const links = [
   { label: "🎙 Listen to REI Baddies", href: "#", color: "#E8176A", textColor: "#FFFFFF" },
@@ -19,9 +20,9 @@ export default function LinksPage() {
     <div className="min-h-screen bg-[#F2EDE0] flex flex-col items-center py-16 px-6">
       {/* Header */}
       <div className="text-center mb-10">
-        {/* Avatar slot */}
-        <div className="w-24 h-24 rounded-full bg-[#E8176A] border-4 border-[#0D0D0D] mx-auto mb-5 flex items-center justify-center text-3xl overflow-hidden">
-          📸
+        {/* Avatar */}
+        <div className="relative w-24 h-24 rounded-full border-4 border-[#0D0D0D] mx-auto mb-5 overflow-hidden">
+          <Image src="/images/logo.png" alt="REI Baddies Talk Show" fill className="object-cover" />
         </div>
         <h1
           className="font-display font-black text-[#0D0D0D] text-3xl mb-1"

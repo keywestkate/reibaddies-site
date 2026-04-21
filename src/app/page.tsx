@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Marquee from "@/components/Marquee";
 import StarAccent from "@/components/StarAccent";
+import Image from "next/image";
 import Link from "next/link";
 import { getLatestInterviews } from "@/lib/youtube";
 
@@ -342,21 +343,11 @@ export default async function Home() {
       <section className="py-20 px-6 bg-[#F2EDE0]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative h-[480px]">
-            <div className="absolute top-0 left-0 w-56 h-72 rounded-2xl bg-[#FADADD] border-2 border-[#0D0D0D] overflow-hidden flex items-center justify-center">
-              <div className="text-center text-[#0D0D0D]/30 p-4">
-                <div className="text-4xl mb-2">📸</div>
-                <p className="text-xs" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  Rachel photo<br />(public/images/hosts/rachel.jpg)
-                </p>
-              </div>
+            <div className="absolute top-0 left-0 w-56 h-72 rounded-2xl border-2 border-[#0D0D0D] overflow-hidden">
+              <Image src="/images/hosts/rachel.jpg" alt="Rachel Davis" fill className="object-cover object-top" />
             </div>
-            <div className="absolute bottom-0 right-0 w-56 h-72 rounded-2xl bg-[#B5D334] border-2 border-[#0D0D0D] overflow-hidden flex items-center justify-center">
-              <div className="text-center text-[#0D0D0D]/30 p-4">
-                <div className="text-4xl mb-2">📸</div>
-                <p className="text-xs" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  Kate photo<br />(public/images/hosts/kate.jpg)
-                </p>
-              </div>
+            <div className="absolute bottom-0 right-0 w-56 h-72 rounded-2xl border-2 border-[#0D0D0D] overflow-hidden">
+              <Image src="/images/hosts/kate.jpg" alt="Kate Baldwin" fill className="object-cover object-top" />
             </div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#E8176A] text-white rounded-full border-2 border-[#0D0D0D] px-5 py-3 text-center z-10 rotate-6">
               <p className="font-display font-black text-sm" style={{ fontFamily: "'Fraunces', serif" }}>The</p>
