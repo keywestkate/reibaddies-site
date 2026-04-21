@@ -395,19 +395,25 @@ export default async function Home() {
       {/* ── Hosts Teaser ── */}
       <section className="py-20 px-6 bg-[#0D0D0D]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative h-[480px]">
-            <div className="absolute top-0 left-0 w-56 h-72 rounded-2xl border-2 border-[#0D0D0D] overflow-hidden">
+          <div className="relative grid grid-cols-2 gap-3 h-[480px]">
+            <div className="rounded-2xl border-2 border-[#0D0D0D] overflow-hidden relative">
               <Image src="/images/hosts/rachel.jpg" alt="Rachel Davis" fill className="object-cover object-top" />
             </div>
-            <div className="absolute bottom-0 right-0 w-56 h-72 rounded-2xl border-2 border-[#0D0D0D] overflow-hidden">
+            <div className="rounded-2xl border-2 border-[#0D0D0D] overflow-hidden relative">
+              <Image src="/images/hosts/rachel-family.jpg" alt="Rachel with family at Panthers game" fill className="object-cover object-center" />
+            </div>
+            <div className="rounded-2xl border-2 border-[#0D0D0D] overflow-hidden relative">
+              <Image src="/images/hosts/kate-olivia.jpg" alt="Kate and Olivia" fill className="object-cover object-top" />
+            </div>
+            <div className="rounded-2xl border-2 border-[#0D0D0D] overflow-hidden relative">
               <Image src="/images/hosts/kate.jpg" alt="Kate Baldwin" fill className="object-cover object-top" />
             </div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#E8176A] text-white rounded-full border-2 border-[#0D0D0D] px-5 py-3 text-center z-10 rotate-6">
               <p className="font-display font-black text-sm" style={{ fontFamily: "'Fraunces', serif" }}>The</p>
               <p className="font-display font-black text-2xl italic" style={{ fontFamily: "'Fraunces', serif" }}>Baddies</p>
             </div>
-            <StarAccent color="#B5D334" size={36} className="absolute top-4 right-4" />
-            <StarAccent color="#E8176A" size={20} className="absolute bottom-20 left-10" />
+            <StarAccent color="#B5D334" size={36} className="absolute -top-3 -right-3 z-10" />
+            <StarAccent color="#E8176A" size={20} className="absolute -bottom-3 -left-3 z-10" />
           </div>
 
           <div>

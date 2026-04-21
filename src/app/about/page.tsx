@@ -30,6 +30,8 @@ const hosts = [
       { value: "29,032 ft", label: "Everest Base Camp Trek" },
       { value: "Charlotte", label: "Based In" },
     ],
+    secondaryImg: "images/hosts/rachel-family.jpg",
+    secondaryAlt: "Rachel with her family at a Carolina Panthers game",
     socials: [
       { label: "Instagram", href: "https://instagram.com/racheldavis_rei" },
       { label: "YouTube", href: "https://youtube.com/@reibaddiesshow" },
@@ -60,6 +62,8 @@ const hosts = [
       { value: "15 yrs", label: "Wedding Planning" },
       { value: "Key West", label: "Based In" },
     ],
+    secondaryImg: "images/hosts/kate-olivia.jpg",
+    secondaryAlt: "Kate with her daughter Olivia",
     socials: [
       { label: "Instagram", href: "https://instagram.com/katebaldwin_rei" },
       { label: "AskKeyWestKate.com", href: "https://askkeywestkate.com" },
@@ -126,6 +130,9 @@ export default function AboutPage() {
                 >
                   <StarAccent color={host.tagText === "#FFFFFF" ? "#FFFFFF" : "#0D0D0D"} size={24} />
                 </div>
+              </div>
+              <div className="relative w-full aspect-[4/3] rounded-3xl border-2 border-[#0D0D0D] overflow-hidden max-w-sm mx-auto lg:mx-0 mt-4">
+                <Image src={`/${host.secondaryImg}`} alt={host.secondaryAlt} fill className="object-cover object-center" />
               </div>
             </div>
 
