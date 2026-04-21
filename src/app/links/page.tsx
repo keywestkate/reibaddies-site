@@ -2,7 +2,7 @@ import StarAccent from "@/components/StarAccent";
 import Image from "next/image";
 
 const links = [
-  { label: "🎙 Listen to REI Baddies", href: "#", color: "#E8176A", textColor: "#FFFFFF" },
+  { label: "🎙 Listen to REI Baddies Talk Show", href: "#", color: "#E8176A", textColor: "#FFFFFF" },
   { label: "🟢 Watch on YouTube", href: "#", color: "#B5D334", textColor: "#0D0D0D" },
   { label: "🎧 Apple Podcasts", href: "#", color: "#0D0D0D", textColor: "#FFFFFF" },
   { label: "🎵 Spotify", href: "#", color: "#2A5C2E", textColor: "#FFFFFF" },
@@ -77,7 +77,7 @@ export default function LinksPage() {
           className="text-xs text-[#0D0D0D]/40"
           style={{ fontFamily: "'DM Sans', sans-serif" }}
         >
-          © {new Date().getFullYear()} REI Baddies Show · reibaddiesshow.com
+          © {new Date().getFullYear()} REI Baddies Talk Show · reibaddiesshow.com
         </p>
       </div>
     </div>

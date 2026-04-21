@@ -13,7 +13,7 @@ const pressItems = [
   },
   {
     outlet: "SubTo Community",
-    headline: "\"REI Baddies Brings Real Deals to the Forefront\"",
+    headline: "\"REI Baddies Talk Show Brings Real Deals to the Forefront\"",
     date: "January 2025",
     type: "Feature",
   },
@@ -27,7 +27,7 @@ const pressItems = [
 
 const speakingTopics = [
   { title: "Creative Finance 101", desc: "SubTo, seller finance, and novations explained for any audience." },
-  { title: "Building a REI Community", desc: "How we grew REI Baddies from zero to 1M+ downloads." },
+  { title: "Building a REI Community", desc: "How we grew REI Baddies Talk Show from zero to 1M+ downloads." },
   { title: "The Baddie Mindset", desc: "Showing up authentically in a male-dominated space." },
   { title: "Deal Anatomy", desc: "Breaking down a real creative finance deal live on stage." },
 ];

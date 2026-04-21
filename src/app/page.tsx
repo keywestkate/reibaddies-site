@@ -17,7 +17,7 @@ const stats = [
 
 const shows = [
   {
-    name: "REI Baddies",
+    name: "REI Baddies Talk Show",
     tag: "Main Show",
     tagBg: "#E8176A",
     tagText: "#FFFFFF",
@@ -55,15 +55,20 @@ export default async function Home() {
       {/* ── Hero — full-screen cinematic video ── */}
       <section className="relative bg-[#0D0D0D] overflow-hidden" style={{ height: "100vh", minHeight: "600px" }}>
 
-        {/* YouTube iframe — fills 100% of section */}
-        <div className="absolute inset-0 w-full h-full">
+        {/* YouTube iframe — 16:9 centered so all people are visible */}
+        <div className="absolute inset-0 w-full h-full flex items-center justify-center overflow-hidden">
           <iframe
             src={`https://www.youtube.com/embed/${HERO_VIDEO_ID}?autoplay=0&rel=0&modestbranding=1&color=white&iv_load_policy=3`}
             title="REI Baddies Talk Show — Featured Episode"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-            className="w-full h-full"
-            style={{ border: "none" }}
+            style={{
+              border: "none",
+              width: "177.78vh",   /* 16/9 × 100vh — always wider than viewport */
+              minWidth: "100%",
+              height: "100%",
+              minHeight: "56.25vw", /* 9/16 × 100vw — always taller than viewport */
+            }}
           />
         </div>
 
@@ -159,6 +164,35 @@ export default async function Home() {
         <div className="absolute bottom-8 right-8 flex flex-col items-center gap-1.5 opacity-40">
           <div className="w-px h-10 bg-white" style={{ animation: "pulse 2s infinite" }} />
           <p className="text-white text-[10px] uppercase tracking-widest" style={{ fontFamily: "'DM Sans', sans-serif" }}>Scroll</p>
+        </div>
+      </section>
+
+      {/* ── Welcome Section ── */}
+      <section className="bg-[#F2EDE0] py-16 px-6 text-center border-b-2 border-[#0D0D0D]">
+        <div className="max-w-4xl mx-auto">
+          <p
+            className="text-sm uppercase tracking-[0.25em] font-semibold text-[#E8176A] mb-3"
+            style={{ fontFamily: "'DM Sans', sans-serif" }}
+          >
+            Welcome Baddie Nation
+          </p>
+          <h2
+            className="font-display font-black leading-none mb-4 uppercase"
+            style={{
+              fontFamily: "'Fraunces', serif",
+              fontSize: "clamp(2.5rem, 7vw, 6.5rem)",
+              fontWeight: 900,
+            }}
+          >
+            REI Baddies{" "}
+            <em className="text-[#E8176A] not-italic">Talk Show</em>
+          </h2>
+          <p
+            className="font-display italic text-[#0D0D0D]/60"
+            style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(1.2rem, 3vw, 2rem)" }}
+          >
+            where real estate gets real
+          </p>
         </div>
       </section>
 
@@ -290,23 +324,25 @@ export default async function Home() {
       </section>
 
       {/* ── The Shows ── */}
-      <section className="py-20 px-6 bg-[#F2EDE0]">
+      <section className="py-20 px-6 bg-[#0D0D0D]">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-4 mb-4">
-            <StarAccent color="#E8176A" size={24} />
+            <StarAccent color="#B5D334" size={24} />
             <p
-              className="text-xs uppercase tracking-widest font-semibold text-[#E8176A]"
+              className="text-xs uppercase tracking-widest font-semibold text-[#B5D334]"
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
               Three Shows. One Community.
             </p>
           </div>
           <h2
-            className="font-display font-black mb-14 leading-none uppercase"
+            className="font-display font-black mb-14 leading-none uppercase text-white text-center"
             style={{
               fontFamily: "'Fraunces', serif",
               fontSize: "clamp(4rem, 10vw, 9rem)",
               fontWeight: 900,
+              width: "80%",
+              margin: "0 auto 3.5rem auto",
             }}
           >
             Pick Your<br />
@@ -357,7 +393,7 @@ export default async function Home() {
       </section>
 
       {/* ── Hosts Teaser ── */}
-      <section className="py-20 px-6 bg-[#F2EDE0]">
+      <section className="py-20 px-6 bg-[#0D0D0D]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative h-[480px]">
             <div className="absolute top-0 left-0 w-56 h-72 rounded-2xl border-2 border-[#0D0D0D] overflow-hidden">
@@ -376,33 +412,33 @@ export default async function Home() {
 
           <div>
             <p
-              className="text-xs uppercase tracking-widest font-semibold text-[#E8176A] mb-4"
+              className="text-xs uppercase tracking-widest font-semibold text-[#B5D334] mb-4"
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
               ✦ Your Hosts
             </p>
             <h2
-              className="font-display font-black leading-tight mb-6"
+              className="font-display font-black leading-tight mb-6 uppercase text-white"
               style={{
                 fontFamily: "'Fraunces', serif",
-                fontSize: "clamp(2.5rem, 4vw, 4rem)",
+                fontSize: "clamp(2rem, 4vw, 3.5rem)",
                 fontWeight: 900,
               }}
             >
               We Work With{" "}
-              <em className="text-[#E8176A]">Goal-Driven</em>{" "}
+              <span className="text-[#E8176A]">Goal-Driven</span>{" "}
               Investors Who Are Ready to{" "}
-              <em className="text-[#B5D334]">Stop Playing Small</em>
+              <span className="text-[#B5D334]">Stop Playing Small</span>
             </h2>
             <p
-              className="text-base text-[#0D0D0D]/70 leading-relaxed mb-8"
+              className="text-base text-white/60 leading-relaxed mb-8"
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
               Rachel Davis — Army veteran, Everest trekker, author — closed her first creative deal in Nepal on the way to Base Camp. Kate Baldwin — Key West native, luxury agent, capital raiser — top 3% at BHHS in year one. Two operators. Zero fluff.
             </p>
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 bg-[#0D0D0D] text-white font-semibold px-8 py-4 rounded-full border-2 border-[#0D0D0D] hover:bg-[#E8176A] transition-all hover-lift"
+              className="inline-flex items-center gap-2 bg-[#E8176A] text-white font-semibold px-8 py-4 rounded-full border-2 border-[#E8176A] hover:bg-[#B5D334] hover:text-[#0D0D0D] hover:border-[#B5D334] transition-all hover-lift"
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
               Meet Rachel & Kate →

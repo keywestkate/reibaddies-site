@@ -65,7 +65,7 @@ export default function Footer() {
 
       <div className="border-t border-[#F2EDE0]/10 px-6 py-5 text-center">
         <p className="text-xs text-[#F2EDE0]/40" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-          © {new Date().getFullYear()} REI Baddies Show. All rights reserved.
+          © {new Date().getFullYear()} REI Baddies Talk Show. All rights reserved.
         </p>
       </div>
     </footer>

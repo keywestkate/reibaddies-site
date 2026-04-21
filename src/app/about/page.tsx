@@ -15,7 +15,7 @@ const hosts = [
     headline: "Veteran. Everest Trekker. Deal Closer.",
     bio: [
       "Army veteran (two tours in Afghanistan), Everest trekker, author, and systems builder. Wife to Michael; mom to RJ and stepmom to Joshua and Jacob. Rachel closed her first creative deal in Nepal on the way to Everest Base Camp — and then wrote a book about it.",
-      "Charlotte-based operator who turns buy boxes into pipelines — and rookies into closers. She brings military precision and genuine warmth to every deal, every call, and every episode of REI Baddies.",
+      "Charlotte-based operator who turns buy boxes into pipelines — and rookies into closers. She brings military precision and genuine warmth to every deal, every call, and every episode of REI Baddies Talk Show.",
     ],
     funFacts: [
       "Fur idiots (self-described): Nixon and Truffles",
@@ -102,7 +102,7 @@ export default function AboutPage() {
             className="text-xl text-[#0D0D0D]/70 max-w-2xl mx-auto leading-relaxed"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
-            An Army veteran who closed a deal at Everest Base Camp. A Key West native who went top 3% in real estate year one. Together, they built REI Baddies — with receipts, not fluff.
+            An Army veteran who closed a deal at Everest Base Camp. A Key West native who went top 3% in real estate year one. Together, they built REI Baddies Talk Show — with receipts, not fluff.
           </p>
         </div>
       </section>
