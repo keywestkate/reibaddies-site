@@ -459,7 +459,7 @@ export default async function Home() {
               fontWeight: 900,
             }}
           >
-            Join the <em className="text-[#B5D334]">Baddies</em> Community
+            Keep in touch with the <span className="text-[#B5D334]">Baddies</span>
           </h2>
           <p
             className="text-[#F2EDE0]/80 text-lg mb-10 leading-relaxed"

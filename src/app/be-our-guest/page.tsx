@@ -42,7 +42,7 @@ export default function BeOurGuestPage() {
       <Marquee bgColor="#0D0D0D" textColor="#B5D334" borderColor="#0D0D0D" />
 
       {/* What we look for */}
-      <section className="py-20 px-6 bg-[#F2EDE0]">
+      <section className="py-12 px-6 bg-white">
         <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
             <p
@@ -52,11 +52,10 @@ export default function BeOurGuestPage() {
               ✦ What We&apos;re Looking For
             </p>
             <h2
-              className="font-display font-black leading-tight mb-8"
+              className="font-display font-black leading-[0.95] mb-8 uppercase text-[#0D0D0D]"
               style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 900 }}
             >
-              We Want Operators, Not{" "}
-              <em className="text-[#E8176A]">Promoters</em>
+              WE WANT OPERATORS, <span className="text-[#E8176A]">NOT PROMOTERS</span>
             </h2>
 
             <ul className="flex flex-col gap-5">

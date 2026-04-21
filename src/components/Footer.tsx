@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -13,9 +14,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Brand */}
         <div>
-          <p className="font-display font-black text-3xl mb-3" style={{ fontFamily: "'Fraunces', serif" }}>
-            REI<span className="text-[#E8176A]">Baddies</span>
-          </p>
+          <div className="mb-3">
+            <Image src="/images/logo.png" alt="REI Baddies Talk Show" width={64} height={64} className="rounded-full border-2 border-[#F2EDE0]/20" />
+          </div>
           <p className="text-[#F2EDE0]/70 text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Hosted by Rachel Davis & Kate Baldwin. Creative financing, real deals, no fluff.
           </p>

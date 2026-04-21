@@ -22,9 +22,6 @@ export default function Nav() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image src="/images/logo.png" alt="REI Baddies Talk Show" width={44} height={44} className="rounded-full" />
-          <span className="font-display font-black text-lg tracking-tight text-[#0D0D0D] hover:text-[#E8176A] transition-colors hidden sm:block" style={{ fontFamily: "'Fraunces', serif" }}>
-            REI<span className="text-[#E8176A]">Baddies</span>
-          </span>
         </Link>
 
         {/* Desktop links */}
