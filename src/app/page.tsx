@@ -4,7 +4,7 @@ import Marquee from "@/components/Marquee";
 import StarAccent from "@/components/StarAccent";
 import Image from "next/image";
 import Link from "next/link";
-import { getLatestInterviews } from "@/lib/youtube";
+import { getLatestInterviews, getChannelStats } from "@/lib/youtube";
 
 const HERO_VIDEO_ID = "Mw-6dy1thqg";
 
@@ -43,7 +43,10 @@ const shows = [
 ];
 
 export default async function Home() {
-  const interviews = await getLatestInterviews(3);
+  const [interviews, channelStats] = await Promise.all([
+    getLatestInterviews(3),
+    getChannelStats(),
+  ]);
 
   return (
     <>
@@ -98,8 +101,8 @@ export default async function Home() {
                 textShadow: "0 2px 20px rgba(0,0,0,0.5)",
               }}
             >
-              Real <em className="text-[#E8176A]">Stories.</em>{" "}
-              Real <em className="text-[#B5D334]">Deals.</em>
+              <span className="block">Real <em className="text-[#E8176A]">Stories.</em></span>
+              <span className="block">Real <em className="text-[#B5D334]">Deals.</em></span>
             </h1>
 
             {/* Sub + CTAs row */}
@@ -132,15 +135,15 @@ export default async function Home() {
             </div>
 
             {/* Stats strip */}
-            <div className="flex gap-8 mt-6 pt-5 border-t border-white/10 pointer-events-auto">
+            <div className="flex flex-wrap gap-8 mt-6 pt-5 border-t border-white/10 pointer-events-auto">
               {[
-                { value: "100+", label: "Episodes" },
-                { value: "1M+", label: "Downloads" },
-                { value: "2,500+", label: "Reviews" },
-                { value: "3", label: "Show Formats" },
+                { value: channelStats.subscribers, label: "Subscribers" },
+                { value: channelStats.interviews, label: "Interviews" },
+                { value: "Rachel & Kate", label: "Hosts" },
+                { value: "Real Estate Investing", label: "Why" },
               ].map((s) => (
                 <div key={s.label}>
-                  <p className="font-display font-black text-2xl text-[#B5D334]" style={{ fontFamily: "'Fraunces', serif" }}>
+                  <p className="font-display font-black text-xl text-[#B5D334] leading-tight" style={{ fontFamily: "'Fraunces', serif" }}>
                     {s.value}
                   </p>
                   <p className="text-xs uppercase tracking-widest text-white/40" style={{ fontFamily: "'DM Sans', sans-serif" }}>
@@ -299,14 +302,15 @@ export default async function Home() {
             </p>
           </div>
           <h2
-            className="font-display font-black mb-14 leading-tight"
+            className="font-display font-black mb-14 leading-none uppercase"
             style={{
               fontFamily: "'Fraunces', serif",
-              fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
+              fontSize: "clamp(4rem, 10vw, 9rem)",
               fontWeight: 900,
             }}
           >
-            Pick Your Poison
+            Pick Your<br />
+            <em className="text-[#E8176A] not-italic">Poison</em>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {shows.map((show) => (
