@@ -3,6 +3,9 @@ import Footer from "@/components/Footer";
 import Marquee from "@/components/Marquee";
 import StarAccent from "@/components/StarAccent";
 import Link from "next/link";
+import { getLatestInterviews } from "@/lib/youtube";
+
+const HERO_VIDEO_ID = "Mw-6dy1thqg";
 
 const stats = [
   { value: "1M+", label: "Total Downloads" },
@@ -38,28 +41,9 @@ const shows = [
   },
 ];
 
-const latestEpisodes = [
-  {
-    number: "EP 112",
-    title: "How She Did a SubTo Deal With Zero Dollars Down",
-    guest: "Sarah M.",
-    duration: "48 min",
-  },
-  {
-    number: "EP 111",
-    title: "Seller Finance 101: Getting Your First Deal Done",
-    guest: "Marcus T.",
-    duration: "55 min",
-  },
-  {
-    number: "EP 110",
-    title: "Co-Living: $8K/Month on a Single Family Home",
-    guest: "Priya K.",
-    duration: "41 min",
-  },
-];
+export default async function Home() {
+  const interviews = await getLatestInterviews(3);
 
-export default function Home() {
   return (
     <>
       <Nav />
@@ -67,21 +51,36 @@ export default function Home() {
       {/* ── Hero ── */}
       <section className="pt-16 min-h-screen bg-[#F2EDE0] flex flex-col">
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-2">
-          {/* Left — Text */}
+
+          {/* LEFT — YouTube embed */}
+          <div className="relative bg-[#0D0D0D] min-h-[400px] lg:min-h-0 overflow-hidden flex items-center justify-center">
+            <div className="absolute inset-0">
+              <iframe
+                src={`https://www.youtube.com/embed/${HERO_VIDEO_ID}?autoplay=0&rel=0&modestbranding=1&color=white`}
+                title="REI Baddies Talk Show — Featured Episode"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+                style={{ border: "none" }}
+              />
+            </div>
+          </div>
+
+          {/* RIGHT — Text & CTAs */}
           <div className="flex flex-col justify-center px-8 md:px-14 py-16 lg:py-24">
             <div
               className="inline-flex items-center gap-2 bg-[#B5D334] text-[#0D0D0D] text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full border-2 border-[#0D0D0D] w-fit mb-8"
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
               <StarAccent size={12} color="#0D0D0D" />
-              The #1 Show for Creative REI
+              REI Baddies Talk Show
             </div>
 
             <h1
               className="font-display leading-[0.92] mb-6"
               style={{
                 fontFamily: "'Fraunces', serif",
-                fontSize: "clamp(3.5rem, 8vw, 7rem)",
+                fontSize: "clamp(3rem, 6vw, 6rem)",
                 fontWeight: 900,
               }}
             >
@@ -101,13 +100,15 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Link
-                href="/show"
+              <a
+                href={`https://www.youtube.com/watch?v=${HERO_VIDEO_ID}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-[#E8176A] text-white font-semibold px-8 py-4 rounded-full border-2 border-[#0D0D0D] hover:bg-[#0D0D0D] transition-all text-base hover-lift"
                 style={{ fontFamily: "'DM Sans', sans-serif" }}
               >
-                Listen Now →
-              </Link>
+                Watch Now →
+              </a>
               <Link
                 href="/about"
                 className="bg-transparent text-[#0D0D0D] font-semibold px-8 py-4 rounded-full border-2 border-[#0D0D0D] hover:bg-[#0D0D0D] hover:text-[#F2EDE0] transition-all text-base"
@@ -116,55 +117,152 @@ export default function Home() {
                 Meet the Hosts
               </Link>
             </div>
-          </div>
 
-          {/* Right — Hero image slot */}
-          <div className="relative bg-[#E8176A] min-h-[500px] lg:min-h-0 overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center text-white/30 p-8">
-                <div className="w-32 h-32 rounded-full border-4 border-white/20 mx-auto mb-4 flex items-center justify-center text-5xl">
-                  📸
+            {/* Channel stats row */}
+            <div className="flex gap-8 mt-10 pt-8 border-t-2 border-[#0D0D0D]/10">
+              {[
+                { value: "100+", label: "Episodes" },
+                { value: "1M+", label: "Downloads" },
+                { value: "2,500+", label: "Reviews" },
+              ].map((s) => (
+                <div key={s.label}>
+                  <p
+                    className="font-display font-black text-2xl text-[#E8176A]"
+                    style={{ fontFamily: "'Fraunces', serif" }}
+                  >
+                    {s.value}
+                  </p>
+                  <p
+                    className="text-xs uppercase tracking-widest text-[#0D0D0D]/50"
+                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  >
+                    {s.label}
+                  </p>
                 </div>
-                <p className="text-sm" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  Drop hero photo here
-                  <br />
-                  (public/images/hero.jpg)
-                </p>
-              </div>
-            </div>
-            {/* Oversized background text */}
-            <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
-              <p
-                className="font-display font-black text-white/10 whitespace-nowrap"
-                style={{
-                  fontFamily: "'Fraunces', serif",
-                  fontSize: "clamp(5rem, 14vw, 12rem)",
-                  fontWeight: 900,
-                }}
-              >
-                BADDIES
-              </p>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Marquee 1 ── */}
+      {/* ── Marquee ── */}
       <Marquee />
 
-      {/* ── Stats ── */}
-      <section className="bg-[#0D0D0D] py-14 px-6">
+      {/* ── Latest Interviews ── */}
+      <section className="py-20 px-6 bg-[#0D0D0D]">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div>
+              <div className="flex items-center gap-3 mb-3">
+                <StarAccent color="#B5D334" size={20} />
+                <p
+                  className="text-xs uppercase tracking-widest font-semibold text-[#B5D334]"
+                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  Fresh This Week
+                </p>
+              </div>
+              <h2
+                className="font-display font-black text-white leading-tight"
+                style={{
+                  fontFamily: "'Fraunces', serif",
+                  fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                  fontWeight: 900,
+                }}
+              >
+                Latest{" "}
+                <em className="text-[#E8176A]">Interviews</em>
+              </h2>
+            </div>
+            <a
+              href="https://www.youtube.com/playlist?list=PLsqWtY6le6VldvIJAwOmF5QiQoV3BA785"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#B5D334] text-[#0D0D0D] font-semibold px-6 py-3 rounded-full border-2 border-[#B5D334] hover:bg-[#E8176A] hover:text-white hover:border-[#E8176A] transition-all w-fit"
+              style={{ fontFamily: "'DM Sans', sans-serif" }}
+            >
+              Full Playlist →
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {interviews.map((video) => (
+              <a
+                key={video.id}
+                href={video.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-2xl border-2 border-[#F2EDE0]/10 overflow-hidden hover-lift bg-[#1a1a1a]"
+              >
+                {/* Thumbnail */}
+                <div className="relative overflow-hidden aspect-video bg-[#0D0D0D]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={video.thumbnail}
+                    alt={video.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  {/* Play overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-[#0D0D0D]/40">
+                    <div className="w-14 h-14 rounded-full bg-[#E8176A] border-2 border-white flex items-center justify-center">
+                      <svg width="18" height="18" viewBox="0 0 16 16" fill="white">
+                        <polygon points="3,1 13,8 3,15" />
+                      </svg>
+                    </div>
+                  </div>
+                  {/* Interview badge */}
+                  <div
+                    className="absolute top-3 left-3 bg-[#E8176A] text-white text-xs font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  >
+                    Interview
+                  </div>
+                </div>
+
+                {/* Info */}
+                <div className="p-5">
+                  <p
+                    className="font-display font-bold text-white text-base leading-snug group-hover:text-[#B5D334] transition-colors line-clamp-2"
+                    style={{ fontFamily: "'Fraunces', serif" }}
+                  >
+                    {video.title}
+                  </p>
+                  <p
+                    className="text-xs text-[#F2EDE0]/40 mt-2 uppercase tracking-widest"
+                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  >
+                    REI Baddies Talk Show
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Marquee 2 — lime ── */}
+      <Marquee
+        bgColor="#B5D334"
+        textColor="#0D0D0D"
+        text={[
+          "SubTo","✦","Seller Finance","✦","Novations","✦",
+          "Co-Living","✦","Creative Finance","✦","No Fluff","✦","Real Deals","✦",
+        ]}
+      />
+
+      {/* ── Stats bar ── */}
+      <section className="bg-[#E8176A] py-14 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map((s) => (
             <div key={s.label}>
               <p
-                className="font-display font-black text-5xl text-[#B5D334] mb-2"
+                className="font-display font-black text-5xl text-white mb-2"
                 style={{ fontFamily: "'Fraunces', serif" }}
               >
                 {s.value}
               </p>
               <p
-                className="text-sm uppercase tracking-widest text-[#F2EDE0]/60"
+                className="text-sm uppercase tracking-widest text-white/70"
                 style={{ fontFamily: "'DM Sans', sans-serif" }}
               >
                 {s.label}
@@ -196,7 +294,6 @@ export default function Home() {
           >
             Pick Your Poison
           </h2>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {shows.map((show) => (
               <Link
@@ -241,102 +338,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Marquee 2 — lime ── */}
-      <Marquee
-        bgColor="#B5D334"
-        textColor="#0D0D0D"
-        text={[
-          "SubTo","✦","Seller Finance","✦","Novations","✦",
-          "Co-Living","✦","Creative Finance","✦","No Fluff","✦","Real Deals","✦",
-        ]}
-      />
-
-      {/* ── Latest Episodes ── */}
-      <section className="py-20 px-6 bg-[#E8176A]">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div>
-              <p
-                className="text-xs uppercase tracking-widest font-semibold text-white/70 mb-3"
-                style={{ fontFamily: "'DM Sans', sans-serif" }}
-              >
-                Fresh Drops
-              </p>
-              <h2
-                className="font-display font-black text-white leading-tight"
-                style={{
-                  fontFamily: "'Fraunces', serif",
-                  fontSize: "clamp(2.5rem, 5vw, 4rem)",
-                  fontWeight: 900,
-                }}
-              >
-                Latest Episodes
-              </h2>
-            </div>
-            <Link
-              href="/show"
-              className="inline-flex items-center gap-2 bg-white text-[#0D0D0D] font-semibold px-6 py-3 rounded-full border-2 border-[#0D0D0D] hover:bg-[#0D0D0D] hover:text-white transition-all w-fit"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
-            >
-              All Episodes →
-            </Link>
-          </div>
-
-          <div className="flex flex-col gap-4">
-            {latestEpisodes.map((ep, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-6 bg-white rounded-2xl border-2 border-[#0D0D0D] p-6 hover-lift cursor-pointer group"
-              >
-                <div className="w-12 h-12 rounded-full bg-[#E8176A] border-2 border-[#0D0D0D] flex items-center justify-center shrink-0 group-hover:bg-[#B5D334] transition-colors">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="white">
-                    <polygon points="3,1 13,8 3,15" />
-                  </svg>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p
-                    className="text-xs font-semibold uppercase tracking-widest text-[#E8176A] mb-1"
-                    style={{ fontFamily: "'DM Sans', sans-serif" }}
-                  >
-                    {ep.number}
-                  </p>
-                  <p
-                    className="font-display font-bold text-lg text-[#0D0D0D] truncate"
-                    style={{ fontFamily: "'Fraunces', serif" }}
-                  >
-                    {ep.title}
-                  </p>
-                  <p
-                    className="text-sm text-[#0D0D0D]/60 mt-1"
-                    style={{ fontFamily: "'DM Sans', sans-serif" }}
-                  >
-                    with {ep.guest}
-                  </p>
-                </div>
-                <p
-                  className="shrink-0 text-sm font-medium text-[#0D0D0D]/60"
-                  style={{ fontFamily: "'DM Sans', sans-serif" }}
-                >
-                  {ep.duration}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Hosts Teaser ── */}
       <section className="py-20 px-6 bg-[#F2EDE0]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Photo collage */}
           <div className="relative h-[480px]">
             <div className="absolute top-0 left-0 w-56 h-72 rounded-2xl bg-[#FADADD] border-2 border-[#0D0D0D] overflow-hidden flex items-center justify-center">
               <div className="text-center text-[#0D0D0D]/30 p-4">
                 <div className="text-4xl mb-2">📸</div>
                 <p className="text-xs" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  Rachel photo
-                  <br />
-                  (public/images/hosts/rachel.jpg)
+                  Rachel photo<br />(public/images/hosts/rachel.jpg)
                 </p>
               </div>
             </div>
@@ -344,9 +354,7 @@ export default function Home() {
               <div className="text-center text-[#0D0D0D]/30 p-4">
                 <div className="text-4xl mb-2">📸</div>
                 <p className="text-xs" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  Kate photo
-                  <br />
-                  (public/images/hosts/kate.jpg)
+                  Kate photo<br />(public/images/hosts/kate.jpg)
                 </p>
               </div>
             </div>
@@ -358,7 +366,6 @@ export default function Home() {
             <StarAccent color="#E8176A" size={20} className="absolute bottom-20 left-10" />
           </div>
 
-          {/* Text */}
           <div>
             <p
               className="text-xs uppercase tracking-widest font-semibold text-[#E8176A] mb-4"
@@ -375,16 +382,15 @@ export default function Home() {
               }}
             >
               We Work With{" "}
-              <em className="text-[#E8176A]">Goal-Driven</em> Investors Who Are Ready
-              to <em className="text-[#B5D334]">Stop Playing Small</em>
+              <em className="text-[#E8176A]">Goal-Driven</em>{" "}
+              Investors Who Are Ready to{" "}
+              <em className="text-[#B5D334]">Stop Playing Small</em>
             </h2>
             <p
               className="text-base text-[#0D0D0D]/70 leading-relaxed mb-8"
               style={{ fontFamily: "'DM Sans', sans-serif" }}
             >
-              Rachel Davis and Kate Baldwin evolved their weekly Pace Morby community
-              interviews into a full-scale creative finance platform. They break down
-              deals, mindsets, mistakes, and strategies — with receipts, not fluff.
+              Rachel Davis — Army veteran, Everest trekker, author — closed her first creative deal in Nepal on the way to Base Camp. Kate Baldwin — Key West native, luxury agent, capital raiser — top 3% at BHHS in year one. Two operators. Zero fluff.
             </p>
             <Link
               href="/about"
@@ -436,9 +442,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Final Marquee ── */}
       <Marquee bgColor="#0D0D0D" textColor="#B5D334" borderColor="#0D0D0D" />
-
       <Footer />
     </>
   );

@@ -10,39 +10,58 @@ const hosts = [
     role: "Co-Host & Creative Finance Investor",
     imgSlot: "public/images/hosts/rachel.jpg",
     color: "#E8176A",
+    tagText: "#FFFFFF",
+    headline: "Veteran. Everest Trekker. Deal Closer.",
     bio: [
-      "Rachel Davis is a full-time creative real estate investor specializing in SubTo, seller finance, and novation deals. She started investing with zero cash and now helps others do the same.",
-      "A founding member of the Pace Morby community, Rachel has closed 40+ deals using creative financing strategies and has mentored hundreds of investors across the country.",
-      "When she's not closing deals or recording the show, you'll find her on the road visiting properties, attending masterminds, and building the REI Baddies community.",
+      "Army veteran (two tours in Afghanistan), Everest trekker, author, and systems builder. Wife to Michael; mom to RJ and stepmom to Joshua and Jacob. Rachel closed her first creative deal in Nepal on the way to Everest Base Camp — and then wrote a book about it.",
+      "Charlotte-based operator who turns buy boxes into pipelines — and rookies into closers. She brings military precision and genuine warmth to every deal, every call, and every episode of REI Baddies.",
+    ],
+    funFacts: [
+      "Fur idiots (self-described): Nixon and Truffles",
+      "RJ just broke his school's 5K record — at 12 years old 🏃",
+      "Swiftie during underwriting",
+      "Hemingway on the nightstand",
+      "Fluent in DealSauce, calm seller calls, and clear buy-box logic",
+      "Loves this country — served two tours in Afghanistan",
     ],
     stats: [
-      { value: "40+", label: "Deals Closed" },
-      { value: "3 yrs", label: "Investing" },
-      { value: "500+", label: "Students Mentored" },
+      { value: "2", label: "Tours Served" },
+      { value: "29,032 ft", label: "Everest Base Camp Trek" },
+      { value: "Charlotte", label: "Based In" },
     ],
     socials: [
       { label: "Instagram", href: "https://instagram.com/racheldavis_rei" },
-      { label: "YouTube", href: "https://youtube.com" },
+      { label: "YouTube", href: "https://youtube.com/@reibaddiesshow" },
     ],
   },
   {
     name: "Kate Baldwin",
-    role: "Co-Host & Real Estate Investor",
+    role: "Co-Host, Luxury Agent & Capital Raiser",
     imgSlot: "public/images/hosts/kate.jpg",
     color: "#B5D334",
+    tagText: "#0D0D0D",
+    headline: "Key West Native. Entrepreneur. Baddie.",
     bio: [
-      "Kate Baldwin is a real estate investor and entrepreneur based in Key West, FL. Known for her straight-talking style and deal-first mindset, Kate brings the receipts to every conversation.",
-      "Kate got her start in traditional real estate before discovering creative financing through the SubTo and Gator Method communities. She hasn't looked back since.",
-      "As co-host of REI Baddies, Kate makes sure every episode stays grounded in real numbers, real deals, and real talk — no fluff allowed.",
+      "Key West native and luxury real estate agent who pairs capital raising with clear, human deal structures. A born entrepreneur, Kate launched her first company at 20 and spent 15 years as an A-list destination wedding planner before transitioning to real estate — earning top 3% at BHHS in her first year.",
+      "Mom to Olivia, anchored by God, family, and friends. She follows policy from local to global because informed decisions beat impulsive ones — then catches the sunset, camera ready.",
+    ],
+    funFacts: [
+      "Mom to Olivia; anchored by God, family, and friends",
+      "Key West native; luxury real estate agent and capital raiser",
+      "Launched first company at 20; 15 years as an A-list destination wedding planner",
+      "Top 3% at BHHS in year one of real estate",
+      "Policy-watcher — local, U.S., and global",
+      "Fishing days, small-venue nights with a great band",
+      "Still takes a photo of every sunset (there are 9 photos inside the folders)",
     ],
     stats: [
-      { value: "25+", label: "Deals Closed" },
-      { value: "5 yrs", label: "RE Experience" },
+      { value: "Top 3%", label: "BHHS Year One" },
+      { value: "15 yrs", label: "Wedding Planning" },
       { value: "Key West", label: "Based In" },
     ],
     socials: [
       { label: "Instagram", href: "https://instagram.com/katebaldwin_rei" },
-      { label: "Website", href: "https://askkeywestkate.com" },
+      { label: "AskKeyWestKate.com", href: "https://askkeywestkate.com" },
     ],
   },
 ];
@@ -79,7 +98,7 @@ export default function AboutPage() {
             className="text-xl text-[#0D0D0D]/70 max-w-2xl mx-auto leading-relaxed"
             style={{ fontFamily: "'DM Sans', sans-serif" }}
           >
-            Two investors. Hundreds of deals. Zero tolerance for fluff. Rachel Davis and Kate Baldwin built REI Baddies to give you the real story behind creative real estate investing.
+            An Army veteran who closed a deal at Everest Base Camp. A Key West native who went top 3% in real estate year one. Together, they built REI Baddies — with receipts, not fluff.
           </p>
         </div>
       </section>
@@ -92,52 +111,48 @@ export default function AboutPage() {
           key={host.name}
           className={`py-20 px-6 ${i % 2 === 0 ? "bg-white" : "bg-[#F2EDE0]"}`}
         >
-          <div
-            className={`max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${
-              i % 2 === 1 ? "lg:flex-row-reverse" : ""
-            }`}
-          >
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Photo slot */}
-            <div
-              className={`relative h-[500px] rounded-3xl border-2 border-[#0D0D0D] overflow-hidden flex items-center justify-center ${
-                i % 2 === 1 ? "lg:order-2" : ""
-              }`}
-              style={{ backgroundColor: host.color + "22" }}
-            >
-              <div className="text-center text-[#0D0D0D]/30 p-8">
-                <div className="text-6xl mb-4">📸</div>
-                <p className="text-sm" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  {host.name} photo
-                  <br />({host.imgSlot})
-                </p>
-              </div>
-              {/* Corner accent */}
+            <div className={i % 2 === 1 ? "lg:order-2" : ""}>
               <div
-                className="absolute top-0 right-0 w-24 h-24 rounded-bl-3xl border-b-2 border-l-2 border-[#0D0D0D] flex items-center justify-center"
-                style={{ backgroundColor: host.color }}
+                className="relative w-full aspect-[3/4] rounded-3xl border-2 border-[#0D0D0D] overflow-hidden flex items-center justify-center max-w-sm mx-auto lg:mx-0"
+                style={{ backgroundColor: host.color + "22" }}
               >
-                <StarAccent color="#FFFFFF" size={28} />
+                <div className="text-center text-[#0D0D0D]/30 p-8">
+                  <div className="text-6xl mb-4">📸</div>
+                  <p className="text-xs" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                    {host.name} photo<br />({host.imgSlot})
+                  </p>
+                </div>
+                <div
+                  className="absolute top-0 right-0 w-20 h-20 rounded-bl-3xl border-b-2 border-l-2 border-[#0D0D0D] flex items-center justify-center"
+                  style={{ backgroundColor: host.color }}
+                >
+                  <StarAccent color={host.tagText === "#FFFFFF" ? "#FFFFFF" : "#0D0D0D"} size={24} />
+                </div>
               </div>
             </div>
 
             {/* Text */}
             <div className={i % 2 === 1 ? "lg:order-1" : ""}>
               <span
-                className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full border-2 border-[#0D0D0D] mb-4"
-                style={{ backgroundColor: host.color, color: host.color === "#B5D334" ? "#0D0D0D" : "#FFFFFF", fontFamily: "'DM Sans', sans-serif" }}
+                className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full border-2 border-[#0D0D0D] mb-3"
+                style={{ backgroundColor: host.color, color: host.tagText, fontFamily: "'DM Sans', sans-serif" }}
               >
                 {host.role}
               </span>
               <h2
-                className="font-display font-black mb-6 leading-tight"
-                style={{
-                  fontFamily: "'Fraunces', serif",
-                  fontSize: "clamp(2.5rem, 4vw, 3.5rem)",
-                  fontWeight: 900,
-                }}
+                className="font-display font-black mb-1 leading-tight"
+                style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(2.5rem, 4vw, 3.5rem)", fontWeight: 900 }}
               >
                 {host.name}
               </h2>
+              <p
+                className="font-display italic text-xl mb-6"
+                style={{ fontFamily: "'Fraunces', serif", color: host.color }}
+              >
+                {host.headline}
+              </p>
 
               {host.bio.map((para, j) => (
                 <p
@@ -154,7 +169,7 @@ export default function AboutPage() {
                 {host.stats.map((s) => (
                   <div key={s.label} className="text-center">
                     <p
-                      className="font-display font-black text-2xl mb-1"
+                      className="font-display font-black text-xl mb-1 leading-tight"
                       style={{ fontFamily: "'Fraunces', serif", color: host.color }}
                     >
                       {s.value}
@@ -169,6 +184,28 @@ export default function AboutPage() {
                 ))}
               </div>
 
+              {/* Fun Facts */}
+              <div className="mb-8">
+                <p
+                  className="text-xs uppercase tracking-widest font-semibold mb-4"
+                  style={{ color: host.color, fontFamily: "'DM Sans', sans-serif" }}
+                >
+                  ✦ Fun Facts
+                </p>
+                <ul className="flex flex-col gap-2">
+                  {host.funFacts.map((fact, j) => (
+                    <li
+                      key={j}
+                      className="flex items-start gap-3 text-sm text-[#0D0D0D]/70"
+                      style={{ fontFamily: "'DM Sans', sans-serif" }}
+                    >
+                      <StarAccent color={host.color} size={12} className="mt-0.5 shrink-0" />
+                      {fact}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
               <div className="flex gap-3 flex-wrap">
                 {host.socials.map((s) => (
                   <a
@@ -176,12 +213,8 @@ export default function AboutPage() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm font-semibold px-5 py-2.5 rounded-full border-2 border-[#0D0D0D] hover:text-white transition-all"
-                    style={{
-                      fontFamily: "'DM Sans', sans-serif",
-                      backgroundColor: host.color,
-                      color: host.color === "#B5D334" ? "#0D0D0D" : "#FFFFFF",
-                    }}
+                    className="text-sm font-semibold px-5 py-2.5 rounded-full border-2 border-[#0D0D0D] hover:opacity-80 transition-all"
+                    style={{ backgroundColor: host.color, color: host.tagText, fontFamily: "'DM Sans', sans-serif" }}
                   >
                     {s.label} ↗
                   </a>
@@ -192,15 +225,11 @@ export default function AboutPage() {
         </section>
       ))}
 
-      {/* Community banner */}
+      {/* CTA */}
       <section className="py-16 px-6 bg-[#0D0D0D] text-center">
         <h2
           className="font-display font-black text-white mb-6"
-          style={{
-            fontFamily: "'Fraunces', serif",
-            fontSize: "clamp(2rem, 4vw, 3.5rem)",
-            fontWeight: 900,
-          }}
+          style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 900 }}
         >
           Want to be on the show?
         </h2>
