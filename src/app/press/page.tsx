@@ -37,33 +37,33 @@ export default function PressPage() {
     <>
       <Nav />
 
-      <section className="pt-16 bg-[#B5D334] py-20 px-6">
+      <section className="pt-16 bg-[#53885E] py-20 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <StarAccent color="#0D0D0D" size={40} className="mx-auto mb-6" />
           <h1
             className="font-display font-black text-[#0D0D0D] leading-[0.92] mb-6"
-            style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(3rem, 8vw, 6rem)", fontWeight: 900 }}
+            style={{ fontFamily: "'Lucky Goldfish', sans-serif", fontSize: "clamp(3rem, 8vw, 6rem)", fontWeight: 900 }}
           >
             <span className="block">Press &</span>
-            <span className="block italic text-[#E8176A]">Speaking</span>
+            <span className="block italic text-[#EC99AF]">Speaking</span>
           </h1>
           <p
             className="text-[#0D0D0D]/70 text-xl max-w-2xl mx-auto"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
+            style={{ fontFamily: "'Lemonilla', sans-serif" }}
           >
             Rachel and Kate are available for media features, podcast interviews, masterminds, and conference speaking.
           </p>
         </div>
       </section>
 
-      <Marquee bgColor="#0D0D0D" textColor="#B5D334" borderColor="#0D0D0D" />
+      <Marquee bgColor="#0D0D0D" textColor="#53885E" borderColor="#0D0D0D" />
 
       {/* Press */}
-      <section className="py-20 px-6 bg-[#F2EDE0]">
+      <section className="py-20 px-6 bg-[#FFFFFF]">
         <div className="max-w-5xl mx-auto">
           <h2
             className="font-display font-black mb-10"
-            style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 900 }}
+            style={{ fontFamily: "'Lucky Goldfish', sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 900 }}
           >
             In the Press
           </h2>
@@ -72,15 +72,15 @@ export default function PressPage() {
               <div key={i} className="flex gap-6 items-center p-6 bg-white rounded-2xl border-2 border-[#0D0D0D] hover-lift">
                 <div
                   className="w-14 h-14 rounded-2xl border-2 border-[#0D0D0D] flex items-center justify-center shrink-0 font-display font-black text-xs text-center leading-tight"
-                  style={{ backgroundColor: i % 2 === 0 ? "#E8176A" : "#B5D334", color: i % 2 === 0 ? "#FFFFFF" : "#0D0D0D", fontFamily: "'Fraunces', serif" }}
+                  style={{ backgroundColor: i % 2 === 0 ? "#EC99AF" : "#53885E", color: i % 2 === 0 ? "#FFFFFF" : "#0D0D0D", fontFamily: "'Lucky Goldfish', sans-serif" }}
                 >
                   {p.outlet.split(" ")[0]}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-[#E8176A] mb-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-[#EC99AF] mb-1" style={{ fontFamily: "'Lemonilla', sans-serif" }}>
                     {p.outlet} · {p.type} · {p.date}
                   </p>
-                  <p className="font-display font-bold text-lg text-[#0D0D0D]" style={{ fontFamily: "'Fraunces', serif" }}>
+                  <p className="font-display font-bold text-lg text-[#0D0D0D]" style={{ fontFamily: "'Lucky Goldfish', sans-serif" }}>
                     {p.headline}
                   </p>
                 </div>
@@ -93,23 +93,23 @@ export default function PressPage() {
       {/* Speaking */}
       <section className="py-20 px-6 bg-[#0D0D0D]">
         <div className="max-w-5xl mx-auto">
-          <p className="text-xs uppercase tracking-widest font-semibold text-[#B5D334] mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="text-xs uppercase tracking-widest font-semibold text-[#53885E] mb-4" style={{ fontFamily: "'Lemonilla', sans-serif" }}>
             ✦ Book Rachel & Kate
           </p>
           <h2
             className="font-display font-black text-white mb-12"
-            style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 900 }}
+            style={{ fontFamily: "'Lucky Goldfish', sans-serif", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 900 }}
           >
             Speaking Topics
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {speakingTopics.map((t, i) => (
-              <div key={i} className="p-6 rounded-2xl border-2 border-[#F2EDE0]/10 bg-[#F2EDE0]/5">
-                <StarAccent color="#B5D334" size={20} className="mb-3" />
-                <h3 className="font-display font-black text-xl text-white mb-2" style={{ fontFamily: "'Fraunces', serif" }}>
+              <div key={i} className="p-6 rounded-2xl border-2 border-[#FFFFFF]/10 bg-[#FFFFFF]/5">
+                <StarAccent color="#53885E" size={20} className="mb-3" />
+                <h3 className="font-display font-black text-xl text-white mb-2" style={{ fontFamily: "'Lucky Goldfish', sans-serif" }}>
                   {t.title}
                 </h3>
-                <p className="text-sm text-[#F2EDE0]/60" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                <p className="text-sm text-[#FFFFFF]/60" style={{ fontFamily: "'Lemonilla', sans-serif" }}>
                   {t.desc}
                 </p>
               </div>
@@ -119,8 +119,8 @@ export default function PressPage() {
           <div className="mt-12 text-center">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-[#E8176A] text-white font-semibold px-10 py-4 rounded-full border-2 border-[#E8176A] hover:bg-[#B5D334] hover:text-[#0D0D0D] hover:border-[#B5D334] transition-all hover-lift"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="inline-flex items-center gap-2 bg-[#EC99AF] text-white font-semibold px-10 py-4 rounded-full border-2 border-[#EC99AF] hover:bg-[#53885E] hover:text-[#0D0D0D] hover:border-[#53885E] transition-all hover-lift"
+              style={{ fontFamily: "'Lemonilla', sans-serif" }}
             >
               Book a Speaking Slot →
             </Link>

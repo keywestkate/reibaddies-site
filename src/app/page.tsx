@@ -5,6 +5,8 @@ import StarAccent from "@/components/StarAccent";
 import Image from "next/image";
 import Link from "next/link";
 import { getLatestInterviews, getChannelStats } from "@/lib/youtube";
+import Pennant from "@/components/Pennant";
+import AlligatorIcon from "@/components/AlligatorIcon";
 
 const HERO_VIDEO_ID = "Mw-6dy1thqg";
 
@@ -19,7 +21,7 @@ const shows = [
   {
     name: "REI Baddies Talk Show",
     tag: "Main Show",
-    tagBg: "#E8176A",
+    tagBg: "#EC99AF",
     tagText: "#FFFFFF",
     desc: "Deep dives into creative financing deals — SubTo, seller finance, novations, and beyond. Real operators sharing real numbers.",
     href: "/show",
@@ -27,7 +29,7 @@ const shows = [
   {
     name: "Deal Sauce",
     tag: "Breakdowns",
-    tagBg: "#B5D334",
+    tagBg: "#53885E",
     tagText: "#0D0D0D",
     desc: "Quick-hit deal breakdowns under 20 minutes. The exact structure, the numbers, the lessons learned. No fluff, just sauce.",
     href: "/show#deal-sauce",
@@ -35,7 +37,7 @@ const shows = [
   {
     name: "After Dark",
     tag: "Live Pitch Room",
-    tagBg: "#2A5C2E",
+    tagBg: "#53885E",
     tagText: "#FFFFFF",
     desc: "A live pitch room where investors bring their deals and get real feedback from Rachel & Kate. Raw, unfiltered, and invaluable.",
     href: "/show#after-dark",
@@ -88,8 +90,8 @@ export default async function Home() {
           <div className="max-w-7xl mx-auto">
             {/* Badge */}
             <div
-              className="inline-flex items-center gap-2 bg-[#B5D334] text-[#0D0D0D] text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full border-2 border-[#0D0D0D] mb-5 pointer-events-auto"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="inline-flex items-center gap-2 bg-[#53885E] text-[#0D0D0D] text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full border-2 border-[#0D0D0D] mb-5 pointer-events-auto"
+              style={{ fontFamily: "'Lemonilla', sans-serif" }}
             >
               <StarAccent size={10} color="#0D0D0D" />
               REI Baddies Talk Show
@@ -99,22 +101,22 @@ export default async function Home() {
             <h1
               className="font-display font-black text-white leading-[0.88] mb-5"
               style={{
-                fontFamily: "'Fraunces', serif",
+                fontFamily: "'Lucky Goldfish', sans-serif",
                 fontSize: "clamp(3rem, 7vw, 7rem)",
                 fontWeight: 900,
                 textShadow: "0 2px 20px rgba(0,0,0,0.5)",
               }}
             >
               <span className="block">Welcome to</span>
-              <span className="block italic text-[#E8176A]">Baddie Nation</span>
-              <span className="block text-[#B5D334] text-[0.55em] italic mt-1">where real estate gets real.</span>
+              <span className="block italic text-[#EC99AF]">Baddie Nation</span>
+              <span className="block text-[#53885E] text-[0.55em] italic mt-1">where real estate gets real.</span>
             </h1>
 
             {/* Sub + CTAs row */}
             <div className="flex flex-col sm:flex-row sm:items-end gap-6 justify-between">
               <p
-                className="text-[#F2EDE0]/80 text-lg max-w-xl leading-relaxed"
-                style={{ fontFamily: "'DM Sans', sans-serif" }}
+                className="text-[#FFFFFF]/80 text-lg max-w-xl leading-relaxed"
+                style={{ fontFamily: "'Lemonilla', sans-serif" }}
               >
                 Hosted by <strong className="text-white">Rachel Davis & Kate Baldwin</strong> — operators who do the deals and share the receipts. No fluff.
               </p>
@@ -124,15 +126,15 @@ export default async function Home() {
                   href={`https://www.youtube.com/watch?v=${HERO_VIDEO_ID}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#E8176A] text-white font-semibold px-7 py-3.5 rounded-full border-2 border-[#E8176A] hover:bg-white hover:text-[#0D0D0D] hover:border-white transition-all text-sm hover-lift"
-                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  className="bg-[#EC99AF] text-white font-semibold px-7 py-3.5 rounded-full border-2 border-[#EC99AF] hover:bg-white hover:text-[#0D0D0D] hover:border-white transition-all text-sm hover-lift"
+                  style={{ fontFamily: "'Lemonilla', sans-serif" }}
                 >
                   Watch Full Episode →
                 </a>
                 <Link
                   href="/show"
                   className="bg-transparent text-white font-semibold px-7 py-3.5 rounded-full border-2 border-white/40 hover:border-white hover:bg-white/10 transition-all text-sm"
-                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  style={{ fontFamily: "'Lemonilla', sans-serif" }}
                 >
                   All Episodes
                 </Link>
@@ -148,10 +150,10 @@ export default async function Home() {
                 { value: "Real Estate Investing", label: "Why" },
               ].map((s) => (
                 <div key={s.label}>
-                  <p className="font-display font-black text-xl text-[#B5D334] leading-tight" style={{ fontFamily: "'Fraunces', serif" }}>
+                  <p className="font-display font-black text-xl text-[#53885E] leading-tight" style={{ fontFamily: "'Lucky Goldfish', sans-serif" }}>
                     {s.value}
                   </p>
-                  <p className="text-xs uppercase tracking-widest text-white/40" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                  <p className="text-xs uppercase tracking-widest text-white/40" style={{ fontFamily: "'Lemonilla', sans-serif" }}>
                     {s.label}
                   </p>
                 </div>
@@ -163,33 +165,33 @@ export default async function Home() {
         {/* Scroll indicator */}
         <div className="absolute bottom-8 right-8 flex flex-col items-center gap-1.5 opacity-40">
           <div className="w-px h-10 bg-white" style={{ animation: "pulse 2s infinite" }} />
-          <p className="text-white text-[10px] uppercase tracking-widest" style={{ fontFamily: "'DM Sans', sans-serif" }}>Scroll</p>
+          <p className="text-white text-[10px] uppercase tracking-widest" style={{ fontFamily: "'Lemonilla', sans-serif" }}>Scroll</p>
         </div>
       </section>
 
       {/* ── Welcome Section ── */}
-      <section className="bg-[#F2EDE0] py-16 px-6 text-center border-b-2 border-[#0D0D0D]">
+      <section className="bg-[#FFFFFF] py-16 px-6 text-center border-b-2 border-[#0D0D0D]">
         <div className="max-w-4xl mx-auto">
           <p
-            className="text-sm uppercase tracking-[0.25em] font-semibold text-[#E8176A] mb-3"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
+            className="text-sm uppercase tracking-[0.25em] font-semibold text-[#EC99AF] mb-3"
+            style={{ fontFamily: "'Lemonilla', sans-serif" }}
           >
             Welcome Baddie Nation
           </p>
           <h2
             className="font-display font-black leading-none mb-4 uppercase"
             style={{
-              fontFamily: "'Fraunces', serif",
+              fontFamily: "'Lucky Goldfish', sans-serif",
               fontSize: "clamp(2.5rem, 7vw, 6.5rem)",
               fontWeight: 900,
             }}
           >
             REI Baddies{" "}
-            <em className="text-[#E8176A] not-italic">Talk Show</em>
+            <em className="text-[#EC99AF] not-italic">Talk Show</em>
           </h2>
           <p
             className="font-display italic text-[#0D0D0D]/60"
-            style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(1.2rem, 3vw, 2rem)" }}
+            style={{ fontFamily: "'Lucky Goldfish', sans-serif", fontSize: "clamp(1.2rem, 3vw, 2rem)" }}
           >
             where real estate gets real
           </p>
@@ -205,10 +207,10 @@ export default async function Home() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <StarAccent color="#B5D334" size={20} />
+                <StarAccent color="#53885E" size={20} />
                 <p
-                  className="text-xs uppercase tracking-widest font-semibold text-[#B5D334]"
-                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  className="text-xs uppercase tracking-widest font-semibold text-[#53885E]"
+                  style={{ fontFamily: "'Lemonilla', sans-serif" }}
                 >
                   Fresh This Week
                 </p>
@@ -216,21 +218,21 @@ export default async function Home() {
               <h2
                 className="font-display font-black text-white leading-tight"
                 style={{
-                  fontFamily: "'Fraunces', serif",
+                  fontFamily: "'Lucky Goldfish', sans-serif",
                   fontSize: "clamp(2.5rem, 5vw, 4rem)",
                   fontWeight: 900,
                 }}
               >
                 Latest{" "}
-                <em className="text-[#E8176A]">Interviews</em>
+                <em className="text-[#EC99AF]">Interviews</em>
               </h2>
             </div>
             <a
               href="https://www.youtube.com/playlist?list=PLsqWtY6le6VldvIJAwOmF5QiQoV3BA785"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#B5D334] text-[#0D0D0D] font-semibold px-6 py-3 rounded-full border-2 border-[#B5D334] hover:bg-[#E8176A] hover:text-white hover:border-[#E8176A] transition-all w-fit"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="inline-flex items-center gap-2 bg-[#53885E] text-[#0D0D0D] font-semibold px-6 py-3 rounded-full border-2 border-[#53885E] hover:bg-[#EC99AF] hover:text-white hover:border-[#EC99AF] transition-all w-fit"
+              style={{ fontFamily: "'Lemonilla', sans-serif" }}
             >
               Full Playlist →
             </a>
@@ -243,7 +245,7 @@ export default async function Home() {
                 href={video.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group rounded-2xl border-2 border-[#F2EDE0]/10 overflow-hidden hover-lift bg-[#1a1a1a]"
+                className="group rounded-2xl border-2 border-[#FFFFFF]/10 overflow-hidden hover-lift bg-[#1a1a1a]"
               >
                 {/* Thumbnail */}
                 <div className="relative overflow-hidden aspect-video bg-[#0D0D0D]">
@@ -255,7 +257,7 @@ export default async function Home() {
                   />
                   {/* Play overlay */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-[#0D0D0D]/40">
-                    <div className="w-14 h-14 rounded-full bg-[#E8176A] border-2 border-white flex items-center justify-center">
+                    <div className="w-14 h-14 rounded-full bg-[#EC99AF] border-2 border-white flex items-center justify-center">
                       <svg width="18" height="18" viewBox="0 0 16 16" fill="white">
                         <polygon points="3,1 13,8 3,15" />
                       </svg>
@@ -263,8 +265,8 @@ export default async function Home() {
                   </div>
                   {/* Interview badge */}
                   <div
-                    className="absolute top-3 left-3 bg-[#E8176A] text-white text-xs font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
-                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                    className="absolute top-3 left-3 bg-[#EC99AF] text-white text-xs font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                    style={{ fontFamily: "'Lemonilla', sans-serif" }}
                   >
                     Interview
                   </div>
@@ -273,14 +275,14 @@ export default async function Home() {
                 {/* Info */}
                 <div className="p-5">
                   <p
-                    className="font-display font-bold text-white text-base leading-snug group-hover:text-[#B5D334] transition-colors line-clamp-2"
-                    style={{ fontFamily: "'Fraunces', serif" }}
+                    className="font-display font-bold text-white text-base leading-snug group-hover:text-[#53885E] transition-colors line-clamp-2"
+                    style={{ fontFamily: "'Lucky Goldfish', sans-serif" }}
                   >
                     {video.title}
                   </p>
                   <p
-                    className="text-xs text-[#F2EDE0]/40 mt-2 uppercase tracking-widest"
-                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                    className="text-xs text-[#FFFFFF]/40 mt-2 uppercase tracking-widest"
+                    style={{ fontFamily: "'Lemonilla', sans-serif" }}
                   >
                     REI Baddies Talk Show
                   </p>
@@ -293,7 +295,7 @@ export default async function Home() {
 
       {/* ── Marquee 2 — lime ── */}
       <Marquee
-        bgColor="#B5D334"
+        bgColor="#53885E"
         textColor="#0D0D0D"
         text={[
           "SubTo","✦","Seller Finance","✦","Novations","✦",
@@ -302,19 +304,19 @@ export default async function Home() {
       />
 
       {/* ── Stats bar ── */}
-      <section className="bg-[#E8176A] py-14 px-6">
+      <section className="bg-[#EC99AF] py-14 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map((s) => (
             <div key={s.label}>
               <p
                 className="font-display font-black text-5xl text-white mb-2"
-                style={{ fontFamily: "'Fraunces', serif" }}
+                style={{ fontFamily: "'Lucky Goldfish', sans-serif" }}
               >
                 {s.value}
               </p>
               <p
                 className="text-sm uppercase tracking-widest text-white/70"
-                style={{ fontFamily: "'DM Sans', sans-serif" }}
+                style={{ fontFamily: "'Lemonilla', sans-serif" }}
               >
                 {s.label}
               </p>
@@ -327,18 +329,25 @@ export default async function Home() {
       <section className="py-20 px-6 bg-[#0D0D0D]">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-4 mb-4">
-            <StarAccent color="#B5D334" size={24} />
+            <StarAccent color="#53885E" size={24} />
             <p
-              className="text-xs uppercase tracking-widest font-semibold text-[#B5D334]"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="text-xs uppercase tracking-widest font-semibold text-[#53885E]"
+              style={{ fontFamily: "'Lemonilla', sans-serif" }}
             >
               Three Shows. One Community.
             </p>
           </div>
+          {/* Pennant row */}
+          <div className="flex items-end justify-center gap-6 mb-8 flex-wrap">
+            <Pennant text="DEAL SAUCE" color="#EC99AF" size="md" rotate={-8} />
+            <Pennant text="REI BADDIES" color="#53885E" size="lg" rotate={2} />
+            <Pennant text="BADDIE NATION" color="#0D0D0D" textColor="#EC99AF" size="md" rotate={10} />
+          </div>
+
           <h2
             className="font-display font-black mb-14 leading-none uppercase text-white text-center"
             style={{
-              fontFamily: "'Fraunces', serif",
+              fontFamily: "'Lucky Goldfish', sans-serif",
               fontSize: "clamp(4rem, 10vw, 9rem)",
               fontWeight: 900,
               width: "80%",
@@ -346,7 +355,7 @@ export default async function Home() {
             }}
           >
             Pick Your<br />
-            <em className="text-[#E8176A] not-italic">Poison</em>
+            <em className="text-[#EC99AF] not-italic">Poison</em>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {shows.map((show) => (
@@ -362,26 +371,26 @@ export default async function Home() {
                     style={{
                       backgroundColor: show.tagBg,
                       color: show.tagText,
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontFamily: "'Lemonilla', sans-serif",
                     }}
                   >
                     {show.tag}
                   </span>
                   <h3
-                    className="font-display font-black text-2xl mb-3 group-hover:text-[#E8176A] transition-colors"
-                    style={{ fontFamily: "'Fraunces', serif" }}
+                    className="font-display font-black text-2xl mb-3 group-hover:text-[#EC99AF] transition-colors"
+                    style={{ fontFamily: "'Lucky Goldfish', sans-serif" }}
                   >
                     {show.name}
                   </h3>
                   <p
                     className="text-sm text-[#0D0D0D]/70 leading-relaxed mb-6"
-                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                    style={{ fontFamily: "'Lemonilla', sans-serif" }}
                   >
                     {show.desc}
                   </p>
                   <span
-                    className="text-sm font-semibold text-[#E8176A]"
-                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                    className="text-sm font-semibold text-[#EC99AF]"
+                    style={{ fontFamily: "'Lemonilla', sans-serif" }}
                   >
                     Watch Now →
                   </span>
@@ -408,44 +417,44 @@ export default async function Home() {
             <div className="rounded-2xl border-2 border-[#0D0D0D] overflow-hidden relative">
               <Image src="/images/hosts/kate.jpg" alt="Kate Baldwin" fill className="object-cover object-top" />
             </div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#E8176A] text-white rounded-full border-2 border-[#0D0D0D] px-5 py-3 text-center z-10 rotate-6">
-              <p className="font-display font-black text-sm" style={{ fontFamily: "'Fraunces', serif" }}>The</p>
-              <p className="font-display font-black text-2xl italic" style={{ fontFamily: "'Fraunces', serif" }}>Baddies</p>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#EC99AF] text-white rounded-full border-2 border-[#0D0D0D] px-5 py-3 text-center z-10 rotate-6">
+              <p className="font-display font-black text-sm" style={{ fontFamily: "'Lucky Goldfish', sans-serif" }}>The</p>
+              <p className="font-display font-black text-2xl italic" style={{ fontFamily: "'Lucky Goldfish', sans-serif" }}>Baddies</p>
             </div>
-            <StarAccent color="#B5D334" size={36} className="absolute -top-3 -right-3 z-10" />
-            <StarAccent color="#E8176A" size={20} className="absolute -bottom-3 -left-3 z-10" />
+            <StarAccent color="#53885E" size={36} className="absolute -top-3 -right-3 z-10" />
+            <StarAccent color="#EC99AF" size={20} className="absolute -bottom-3 -left-3 z-10" />
           </div>
 
           <div>
             <p
-              className="text-xs uppercase tracking-widest font-semibold text-[#B5D334] mb-4"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="text-xs uppercase tracking-widest font-semibold text-[#53885E] mb-4"
+              style={{ fontFamily: "'Lemonilla', sans-serif" }}
             >
-              ✦ Your Hosts
+              <AlligatorIcon size={18} color="#53885E" className="inline-block mr-1 align-middle" /> Your Hosts
             </p>
             <h2
               className="font-display font-black leading-tight mb-6 uppercase text-white"
               style={{
-                fontFamily: "'Fraunces', serif",
+                fontFamily: "'Lucky Goldfish', sans-serif",
                 fontSize: "clamp(2rem, 4vw, 3.5rem)",
                 fontWeight: 900,
               }}
             >
               We Work With{" "}
-              <span className="text-[#E8176A]">Goal-Driven</span>{" "}
+              <span className="text-[#EC99AF]">Goal-Driven</span>{" "}
               Investors Who Are Ready to{" "}
-              <span className="text-[#B5D334]">Stop Playing Small</span>
+              <span className="text-[#53885E]">Stop Playing Small</span>
             </h2>
             <p
               className="text-base text-white/60 leading-relaxed mb-8"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              style={{ fontFamily: "'Lemonilla', sans-serif" }}
             >
               Rachel Davis — Army veteran, Everest trekker, author — closed her first creative deal in Nepal on the way to Base Camp. Kate Baldwin — Key West native, luxury agent, capital raiser — top 3% at BHHS in year one. Two operators. Zero fluff.
             </p>
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 bg-[#E8176A] text-white font-semibold px-8 py-4 rounded-full border-2 border-[#E8176A] hover:bg-[#B5D334] hover:text-[#0D0D0D] hover:border-[#B5D334] transition-all hover-lift"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="inline-flex items-center gap-2 bg-[#EC99AF] text-white font-semibold px-8 py-4 rounded-full border-2 border-[#EC99AF] hover:bg-[#53885E] hover:text-[#0D0D0D] hover:border-[#53885E] transition-all hover-lift"
+              style={{ fontFamily: "'Lemonilla', sans-serif" }}
             >
               Meet Rachel & Kate →
             </Link>
@@ -454,22 +463,22 @@ export default async function Home() {
       </section>
 
       {/* ── Newsletter CTA ── */}
-      <section className="py-20 px-6 bg-[#2A5C2E]">
+      <section className="py-20 px-6 bg-[#53885E]">
         <div className="max-w-3xl mx-auto text-center">
-          <StarAccent color="#B5D334" size={40} className="mx-auto mb-6" />
+          <StarAccent color="#53885E" size={40} className="mx-auto mb-6" />
           <h2
             className="font-display font-black text-white mb-4"
             style={{
-              fontFamily: "'Fraunces', serif",
+              fontFamily: "'Lucky Goldfish', sans-serif",
               fontSize: "clamp(2.5rem, 5vw, 4rem)",
               fontWeight: 900,
             }}
           >
-            Keep in touch with the <span className="text-[#B5D334]">Baddies</span>
+            Keep in touch with the <span className="text-[#53885E]">Baddies</span>
           </h2>
           <p
-            className="text-[#F2EDE0]/80 text-lg mb-10 leading-relaxed"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
+            className="text-[#FFFFFF]/80 text-lg mb-10 leading-relaxed"
+            style={{ fontFamily: "'Lemonilla', sans-serif" }}
           >
             Weekly deals, strategies, and the inside scoop from our SubTo, Gator,
             and DealSauce networks. Drop your email — no spam, just sauce.
@@ -478,13 +487,13 @@ export default async function Home() {
             <input
               type="email"
               placeholder="your@email.com"
-              className="flex-1 px-6 py-4 rounded-full border-2 border-[#0D0D0D] text-[#0D0D0D] bg-white focus:outline-none focus:border-[#B5D334] text-base"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="flex-1 px-6 py-4 rounded-full border-2 border-[#0D0D0D] text-[#0D0D0D] bg-white focus:outline-none focus:border-[#53885E] text-base"
+              style={{ fontFamily: "'Lemonilla', sans-serif" }}
             />
             <button
               type="submit"
-              className="bg-[#E8176A] text-white font-semibold px-8 py-4 rounded-full border-2 border-[#0D0D0D] hover:bg-[#B5D334] hover:text-[#0D0D0D] transition-all shrink-0"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="bg-[#EC99AF] text-white font-semibold px-8 py-4 rounded-full border-2 border-[#0D0D0D] hover:bg-[#53885E] hover:text-[#0D0D0D] transition-all shrink-0"
+              style={{ fontFamily: "'Lemonilla', sans-serif" }}
             >
               I&apos;m In →
             </button>
@@ -492,7 +501,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <Marquee bgColor="#0D0D0D" textColor="#B5D334" borderColor="#0D0D0D" />
+      <Marquee bgColor="#0D0D0D" textColor="#53885E" borderColor="#0D0D0D" />
       <Footer />
     </>
   );

@@ -5,10 +5,10 @@ import StarAccent from "@/components/StarAccent";
 import { getLatestInterviews } from "@/lib/youtube";
 
 const platforms = [
-  { label: "Apple Podcasts", bg: "#E8176A", text: "#FFFFFF", href: "https://podcasts.apple.com" },
-  { label: "Spotify", bg: "#B5D334", text: "#0D0D0D", href: "https://spotify.com" },
-  { label: "YouTube", bg: "#0D0D0D", text: "#FFFFFF", href: "https://youtube.com/@reibaddiesshow" },
-  { label: "Amazon Music", bg: "#2A5C2E", text: "#FFFFFF", href: "https://music.amazon.com" },
+  { label: "Apple Podcasts", bg: "#EC99AF", text: "#FFFFFF", href: "https://podcasts.apple.com/us/podcast/rei-baddies-talk-show/id1234567890" },
+  { label: "Spotify", bg: "#53885E", text: "#0D0D0D", href: "https://open.spotify.com/show/3t2X6HbjA2c3NokCAnLLhE" },
+  { label: "YouTube", bg: "#0D0D0D", text: "#FFFFFF", href: "https://www.youtube.com/@REIBaddies" },
+  { label: "Amazon Music", bg: "#53885E", text: "#FFFFFF", href: "https://music.amazon.com/podcasts/rei-baddies" },
 ];
 
 const dealSauce = [
@@ -27,7 +27,7 @@ export default async function ShowPage() {
       <Nav />
 
       {/* ── HERO — phone mockup left / episode list right ── */}
-      <section className="pt-16 bg-[#F2EDE0] min-h-screen">
+      <section className="pt-16 bg-[#FFFFFF] min-h-screen">
         <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           {/* LEFT — Phone mockup */}
@@ -42,7 +42,7 @@ export default async function ShowPage() {
                   </div>
 
                   {/* Episode art */}
-                  <div className="mx-4 mt-2 rounded-2xl overflow-hidden aspect-square bg-[#E8176A] flex items-center justify-center relative border-2 border-[#F2EDE0]/10">
+                  <div className="mx-4 mt-2 rounded-2xl overflow-hidden aspect-square bg-[#EC99AF] flex items-center justify-center relative border-2 border-[#FFFFFF]/10">
                     {featured?.thumbnail ? (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img src={featured.thumbnail} alt={featured.title} className="w-full h-full object-cover" />
@@ -55,26 +55,26 @@ export default async function ShowPage() {
                     )}
                     {/* REI Baddies overlay badge */}
                     <div className="absolute bottom-2 left-2 right-2 bg-[#0D0D0D]/80 rounded-xl px-3 py-1.5">
-                      <p className="text-[#B5D334] text-[9px] font-semibold uppercase tracking-widest" style={{ fontFamily: "'DM Sans', sans-serif" }}>REI Baddies Talk Show</p>
+                      <p className="text-[#53885E] text-[9px] font-semibold uppercase tracking-widest" style={{ fontFamily: "'Lemonilla', sans-serif" }}>REI Baddies Talk Show</p>
                     </div>
                   </div>
 
                   {/* Track info */}
                   <div className="px-4 pt-4 pb-2 text-center">
-                    <p className="font-display font-black text-white text-sm leading-tight line-clamp-2 mb-1" style={{ fontFamily: "'Fraunces', serif" }}>
+                    <p className="font-display font-black text-white text-sm leading-tight line-clamp-2 mb-1" style={{ fontFamily: "'Lucky Goldfish', sans-serif" }}>
                       {featured?.title ?? "Latest Interview"}
                     </p>
-                    <p className="text-[#F2EDE0]/40 text-[10px] uppercase tracking-widest" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                    <p className="text-[#FFFFFF]/40 text-[10px] uppercase tracking-widest" style={{ fontFamily: "'Lemonilla', sans-serif" }}>
                       REI Baddies Talk Show
                     </p>
                   </div>
 
                   {/* Progress bar */}
                   <div className="px-4 pb-2">
-                    <div className="h-1 bg-[#F2EDE0]/10 rounded-full overflow-hidden">
-                      <div className="h-full w-1/3 bg-[#E8176A] rounded-full" />
+                    <div className="h-1 bg-[#FFFFFF]/10 rounded-full overflow-hidden">
+                      <div className="h-full w-1/3 bg-[#EC99AF] rounded-full" />
                     </div>
-                    <div className="flex justify-between text-[9px] text-[#F2EDE0]/30 mt-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                    <div className="flex justify-between text-[9px] text-[#FFFFFF]/30 mt-1" style={{ fontFamily: "'Lemonilla', sans-serif" }}>
                       <span>17:22</span>
                       <span>57:40</span>
                     </div>
@@ -82,13 +82,13 @@ export default async function ShowPage() {
 
                   {/* Controls */}
                   <div className="flex items-center justify-center gap-5 px-4 pb-5">
-                    <button className="text-[#F2EDE0]/50">
+                    <button className="text-[#FFFFFF]/50">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6V6zm3.5 6l8.5 6V6l-8.5 6z"/></svg>
                     </button>
-                    <button className="w-12 h-12 rounded-full bg-[#E8176A] flex items-center justify-center border-2 border-[#F2EDE0]/20">
+                    <button className="w-12 h-12 rounded-full bg-[#EC99AF] flex items-center justify-center border-2 border-[#FFFFFF]/20">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
                     </button>
-                    <button className="text-[#F2EDE0]/50">
+                    <button className="text-[#FFFFFF]/50">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 6h-2v12h2V6zM14.5 12L6 6v12l8.5-6z"/></svg>
                     </button>
                   </div>
@@ -96,15 +96,15 @@ export default async function ShowPage() {
               </div>
 
               {/* Decorative elements around phone */}
-              <div className="absolute -top-6 -right-6 w-14 h-14 rounded-full bg-[#E8176A] border-2 border-[#0D0D0D] flex items-center justify-center">
+              <div className="absolute -top-6 -right-6 w-14 h-14 rounded-full bg-[#EC99AF] border-2 border-[#0D0D0D] flex items-center justify-center">
                 <StarAccent color="#FFFFFF" size={20} />
               </div>
-              <div className="absolute -bottom-4 -left-4 w-10 h-10 rounded-full bg-[#B5D334] border-2 border-[#0D0D0D]" />
+              <div className="absolute -bottom-4 -left-4 w-10 h-10 rounded-full bg-[#53885E] border-2 border-[#0D0D0D]" />
 
               {/* "listen now" script text */}
               <p
-                className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-[#E8176A] whitespace-nowrap"
-                style={{ fontFamily: "'Fraunces', serif", fontSize: "2rem", fontWeight: 900, fontStyle: "italic" }}
+                className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-[#EC99AF] whitespace-nowrap"
+                style={{ fontFamily: "'Lucky Goldfish', sans-serif", fontSize: "2rem", fontWeight: 900, fontStyle: "italic" }}
               >
                 listen now
               </p>
@@ -114,21 +114,21 @@ export default async function ShowPage() {
           {/* RIGHT — Episode list */}
           <div>
             <p
-              className="text-xs uppercase tracking-widest font-semibold text-[#E8176A] mb-3"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="text-xs uppercase tracking-widest font-semibold text-[#EC99AF] mb-3"
+              style={{ fontFamily: "'Lemonilla', sans-serif" }}
             >
               ✦ Tune in to REI Baddies Talk Show
             </p>
             <h1
               className="font-display font-black leading-[0.9] mb-5"
-              style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(3rem, 6vw, 5.5rem)", fontWeight: 900 }}
+              style={{ fontFamily: "'Lucky Goldfish', sans-serif", fontSize: "clamp(3rem, 6vw, 5.5rem)", fontWeight: 900 }}
             >
               <span className="block text-[#0D0D0D]">The Latest</span>
-              <span className="block text-[#E8176A] italic">on the Show</span>
+              <span className="block text-[#EC99AF] italic">on the Show</span>
             </h1>
             <p
               className="text-base text-[#0D0D0D]/60 mb-8 max-w-md leading-relaxed"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              style={{ fontFamily: "'Lemonilla', sans-serif" }}
             >
               Real investors. Real deals. Real numbers. New episodes every week — interviews, deal breakdowns, and live pitch sessions. No fluff, just sauce.
             </p>
@@ -144,25 +144,25 @@ export default async function ShowPage() {
                   className="flex items-center gap-4 p-4 rounded-2xl border-2 border-[#0D0D0D] bg-white hover-lift group"
                 >
                   {/* Thumbnail */}
-                  <div className="w-14 h-14 rounded-xl overflow-hidden shrink-0 border-2 border-[#0D0D0D] bg-[#E8176A]">
+                  <div className="w-14 h-14 rounded-xl overflow-hidden shrink-0 border-2 border-[#0D0D0D] bg-[#EC99AF]">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={ep.thumbnail} alt={ep.title} className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p
-                      className="text-[10px] font-semibold uppercase tracking-widest text-[#E8176A] mb-0.5"
-                      style={{ fontFamily: "'DM Sans', sans-serif" }}
+                      className="text-[10px] font-semibold uppercase tracking-widest text-[#EC99AF] mb-0.5"
+                      style={{ fontFamily: "'Lemonilla', sans-serif" }}
                     >
                       Episode {String(i + 1).padStart(2, "0")}
                     </p>
                     <p
-                      className="font-display font-bold text-[#0D0D0D] text-sm leading-tight line-clamp-2 group-hover:text-[#E8176A] transition-colors"
-                      style={{ fontFamily: "'Fraunces', serif" }}
+                      className="font-display font-bold text-[#0D0D0D] text-sm leading-tight line-clamp-2 group-hover:text-[#EC99AF] transition-colors"
+                      style={{ fontFamily: "'Lucky Goldfish', sans-serif" }}
                     >
                       {ep.title}
                     </p>
                   </div>
-                  <div className="w-8 h-8 rounded-full bg-[#B5D334] border-2 border-[#0D0D0D] flex items-center justify-center shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-[#53885E] border-2 border-[#0D0D0D] flex items-center justify-center shrink-0">
                     <svg width="10" height="10" viewBox="0 0 16 16" fill="#0D0D0D">
                       <polygon points="3,1 13,8 3,15" />
                     </svg>
@@ -180,7 +180,7 @@ export default async function ShowPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-full border-2 border-[#0D0D0D] hover-lift transition-all"
-                  style={{ backgroundColor: p.bg, color: p.text, fontFamily: "'DM Sans', sans-serif" }}
+                  style={{ backgroundColor: p.bg, color: p.text, fontFamily: "'Lemonilla', sans-serif" }}
                 >
                   {p.label} →
                 </a>
@@ -194,25 +194,25 @@ export default async function ShowPage() {
       <Marquee />
 
       {/* ── Deal Sauce ── */}
-      <section id="deal-sauce" className="py-20 px-6 bg-[#B5D334]">
+      <section id="deal-sauce" className="py-20 px-6 bg-[#53885E]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <span
-              className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full border-2 border-[#0D0D0D] bg-[#0D0D0D] text-[#B5D334] mb-4"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full border-2 border-[#0D0D0D] bg-[#0D0D0D] text-[#53885E] mb-4"
+              style={{ fontFamily: "'Lemonilla', sans-serif" }}
             >
               Deal Sauce
             </span>
             <h2
               className="font-display font-black text-[#0D0D0D] leading-tight mb-4"
-              style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)", fontWeight: 900 }}
+              style={{ fontFamily: "'Lucky Goldfish', sans-serif", fontSize: "clamp(2.5rem, 5vw, 4.5rem)", fontWeight: 900 }}
             >
               Quick Hits.<br />
-              <em className="text-[#E8176A]">Real Numbers.</em>
+              <em className="text-[#EC99AF]">Real Numbers.</em>
             </h2>
             <p
               className="text-[#0D0D0D]/70 text-base leading-relaxed mb-6 max-w-md"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              style={{ fontFamily: "'Lemonilla', sans-serif" }}
             >
               Under 20 minutes. One deal. Full breakdown — structure, numbers, what went wrong, and what you can steal.
             </p>
@@ -220,14 +220,14 @@ export default async function ShowPage() {
           <div className="flex flex-col gap-4">
             {dealSauce.map((ep) => (
               <div key={ep.number} className="flex items-center gap-4 p-5 bg-white rounded-2xl border-2 border-[#0D0D0D] hover-lift cursor-pointer group">
-                <div className="w-10 h-10 rounded-full bg-[#B5D334] border-2 border-[#0D0D0D] flex items-center justify-center shrink-0 group-hover:bg-[#E8176A] transition-colors">
+                <div className="w-10 h-10 rounded-full bg-[#53885E] border-2 border-[#0D0D0D] flex items-center justify-center shrink-0 group-hover:bg-[#EC99AF] transition-colors">
                   <svg width="12" height="12" viewBox="0 0 16 16" fill="#0D0D0D"><polygon points="3,1 13,8 3,15" /></svg>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#E8176A] mb-0.5" style={{ fontFamily: "'DM Sans', sans-serif" }}>{ep.number}</p>
-                  <p className="font-display font-bold text-[#0D0D0D] text-base truncate" style={{ fontFamily: "'Fraunces', serif" }}>{ep.title}</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-widest text-[#EC99AF] mb-0.5" style={{ fontFamily: "'Lemonilla', sans-serif" }}>{ep.number}</p>
+                  <p className="font-display font-bold text-[#0D0D0D] text-base truncate" style={{ fontFamily: "'Lucky Goldfish', sans-serif" }}>{ep.title}</p>
                 </div>
-                <p className="text-xs text-[#0D0D0D]/50 shrink-0" style={{ fontFamily: "'DM Sans', sans-serif" }}>{ep.duration}</p>
+                <p className="text-xs text-[#0D0D0D]/50 shrink-0" style={{ fontFamily: "'Lemonilla', sans-serif" }}>{ep.duration}</p>
               </div>
             ))}
           </div>
@@ -235,7 +235,7 @@ export default async function ShowPage() {
       </section>
 
 
-      <Marquee bgColor="#E8176A" textColor="#FFFFFF" />
+      <Marquee bgColor="#EC99AF" textColor="#FFFFFF" />
       <Footer />
     </>
   );

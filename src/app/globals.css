@@ -1,17 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..500&display=swap');
+@font-face {
+  font-family: 'Lucky Goldfish';
+  src: url('/fonts/LuckyGoldfish.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lemonilla';
+  src: url('/fonts/Lemonilla.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 
 @theme {
-  --color-pink: #E8176A;
-  --color-lime: #B5D334;
-  --color-cream: #F2EDE0;
-  --color-green-dark: #2A5C2E;
+  --color-pink: #EC99AF;
+  --color-lime: #53885E;
+  --color-cream: #FFFFFF;
+  --color-green-dark: #53885E;
   --color-ink: #0D0D0D;
   --color-white: #FFFFFF;
   --color-pink-light: #FADADD;
 
-  --font-display: 'Fraunces', serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Lucky Goldfish', sans-serif;
+  --font-body: 'Lemonilla', sans-serif;
 }
 
 * {
@@ -23,9 +38,9 @@ html {
 }
 
 body {
-  background-color: #F2EDE0;
+  background-color: #FFFFFF;
   color: #0D0D0D;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Lemonilla', sans-serif;
   overflow-x: hidden;
 }
 

@@ -4,7 +4,7 @@ interface StarAccentProps {
   className?: string;
 }
 
-export default function StarAccent({ color = "#B5D334", size = 32, className = "" }: StarAccentProps) {
+export default function StarAccent({ color = "#53885E", size = 32, className = "" }: StarAccentProps) {
   return (
     <svg
       width={size}

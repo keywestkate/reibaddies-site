@@ -17,7 +17,7 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#F2EDE0] border-b-2 border-[#0D0D0D]">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FFFFFF] border-b-2 border-[#0D0D0D]">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -30,8 +30,8 @@ export default function Nav() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="text-sm font-medium tracking-wide uppercase text-[#0D0D0D] hover:text-[#E8176A] transition-colors"
-                style={{ fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.08em" }}
+                className="text-sm font-medium tracking-wide uppercase text-[#0D0D0D] hover:text-[#EC99AF] transition-colors"
+                style={{ fontFamily: "'Lemonilla', sans-serif", letterSpacing: "0.08em" }}
               >
                 {l.label}
               </Link>
@@ -42,8 +42,8 @@ export default function Nav() {
         {/* CTA */}
         <Link
           href="/show"
-          className="hidden lg:inline-flex items-center gap-2 bg-[#B5D334] text-[#0D0D0D] font-semibold text-sm px-5 py-2.5 rounded-full border-2 border-[#0D0D0D] hover:bg-[#E8176A] hover:text-white transition-all"
-          style={{ fontFamily: "'DM Sans', sans-serif" }}
+          className="hidden lg:inline-flex items-center gap-2 bg-[#53885E] text-[#0D0D0D] font-semibold text-sm px-5 py-2.5 rounded-full border-2 border-[#0D0D0D] hover:bg-[#EC99AF] hover:text-white transition-all"
+          style={{ fontFamily: "'Lemonilla', sans-serif" }}
         >
           Listen Now →
         </Link>
@@ -62,14 +62,14 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-[#F2EDE0] border-t-2 border-[#0D0D0D] px-6 py-6 flex flex-col gap-4">
+        <div className="lg:hidden bg-[#FFFFFF] border-t-2 border-[#0D0D0D] px-6 py-6 flex flex-col gap-4">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="text-lg font-medium uppercase tracking-wide text-[#0D0D0D] hover:text-[#E8176A] transition-colors"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="text-lg font-medium uppercase tracking-wide text-[#0D0D0D] hover:text-[#EC99AF] transition-colors"
+              style={{ fontFamily: "'Lemonilla', sans-serif" }}
             >
               {l.label}
             </Link>
@@ -77,8 +77,8 @@ export default function Nav() {
           <Link
             href="/show"
             onClick={() => setOpen(false)}
-            className="mt-2 inline-flex items-center gap-2 bg-[#B5D334] text-[#0D0D0D] font-semibold px-5 py-3 rounded-full border-2 border-[#0D0D0D] w-fit"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
+            className="mt-2 inline-flex items-center gap-2 bg-[#53885E] text-[#0D0D0D] font-semibold px-5 py-3 rounded-full border-2 border-[#0D0D0D] w-fit"
+            style={{ fontFamily: "'Lemonilla', sans-serif" }}
           >
             Listen Now →
           </Link>

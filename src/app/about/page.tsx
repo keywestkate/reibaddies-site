@@ -10,7 +10,7 @@ const hosts = [
     name: "Rachel Davis",
     role: "Co-Host & Creative Finance Investor",
     imgSlot: "images/hosts/rachel.jpg",
-    color: "#E8176A",
+    color: "#EC99AF",
     tagText: "#FFFFFF",
     headline: "Veteran. Everest Trekker. Deal Closer.",
     bio: [
@@ -33,15 +33,15 @@ const hosts = [
     secondaryImg: "images/hosts/rachel-family.jpg",
     secondaryAlt: "Rachel with her family at a Carolina Panthers game",
     socials: [
-      { label: "Instagram", href: "https://instagram.com/racheldavis_rei" },
-      { label: "YouTube", href: "https://youtube.com/@reibaddiesshow" },
+      { label: "Instagram", href: "https://www.instagram.com/theracheldavisrealestate" },
+      { label: "YouTube", href: "https://www.youtube.com/@REIBaddies" },
     ],
   },
   {
     name: "Kate Baldwin",
     role: "Co-Host, Luxury Agent & Capital Raiser",
     imgSlot: "images/hosts/kate.jpg",
-    color: "#B5D334",
+    color: "#53885E",
     tagText: "#0D0D0D",
     headline: "Key West Native. Entrepreneur. Baddie.",
     bio: [
@@ -65,7 +65,7 @@ const hosts = [
     secondaryImg: "images/hosts/kate-olivia.jpg",
     secondaryAlt: "Kate with her daughter Olivia",
     socials: [
-      { label: "Instagram", href: "https://instagram.com/katebaldwin_rei" },
+      { label: "Instagram", href: "https://www.instagram.com/askkeywestkate" },
       { label: "AskKeyWestKate.com", href: "https://askkeywestkate.com" },
     ],
   },
@@ -98,21 +98,21 @@ export default function AboutPage() {
         <div className="absolute bottom-0 left-0 right-0 px-8 md:px-14 pb-12">
           <div className="max-w-7xl mx-auto">
             <p
-              className="text-xs uppercase tracking-widest font-semibold text-[#B5D334] mb-4"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="text-xs uppercase tracking-widest font-semibold text-[#53885E] mb-4"
+              style={{ fontFamily: "'Lemonilla', sans-serif" }}
             >
               ✦ Rachel Davis & Kate Baldwin
             </p>
             <h1
               className="font-display font-black text-white leading-[0.85]"
-              style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(5rem, 14vw, 13rem)", fontWeight: 900 }}
+              style={{ fontFamily: "'Lucky Goldfish', sans-serif", fontSize: "clamp(5rem, 14vw, 13rem)", fontWeight: 900 }}
             >
               <span className="block">The</span>
-              <span className="block italic text-[#E8176A] -mt-2">Baddies</span>
+              <span className="block italic text-[#EC99AF] -mt-2">Baddies</span>
             </h1>
             <p
-              className="text-[#F2EDE0]/70 text-lg mt-4 max-w-lg"
-              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              className="text-[#FFFFFF]/70 text-lg mt-4 max-w-lg"
+              style={{ fontFamily: "'Lemonilla', sans-serif" }}
             >
               Two operators. Real deals. No fluff.
             </p>
@@ -126,7 +126,7 @@ export default function AboutPage() {
       {hosts.map((host, i) => (
         <section
           key={host.name}
-          className={`py-20 px-6 ${i % 2 === 0 ? "bg-white" : "bg-[#F2EDE0]"}`}
+          className={`py-20 px-6 ${i % 2 === 0 ? "bg-white" : "bg-[#FFFFFF]"}`}
         >
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Photo slot */}
@@ -149,19 +149,19 @@ export default function AboutPage() {
             <div className={i % 2 === 1 ? "lg:order-1" : ""}>
               <span
                 className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full border-2 border-[#0D0D0D] mb-3"
-                style={{ backgroundColor: host.color, color: host.tagText, fontFamily: "'DM Sans', sans-serif" }}
+                style={{ backgroundColor: host.color, color: host.tagText, fontFamily: "'Lemonilla', sans-serif" }}
               >
                 {host.role}
               </span>
               <h2
                 className="font-display font-black mb-1 leading-tight"
-                style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(2.5rem, 4vw, 3.5rem)", fontWeight: 900 }}
+                style={{ fontFamily: "'Lucky Goldfish', sans-serif", fontSize: "clamp(2.5rem, 4vw, 3.5rem)", fontWeight: 900 }}
               >
                 {host.name}
               </h2>
               <p
                 className="font-display italic text-xl mb-6"
-                style={{ fontFamily: "'Fraunces', serif", color: host.color }}
+                style={{ fontFamily: "'Lucky Goldfish', sans-serif", color: host.color }}
               >
                 {host.headline}
               </p>
@@ -170,25 +170,25 @@ export default function AboutPage() {
                 <p
                   key={j}
                   className="text-base text-[#0D0D0D]/70 leading-relaxed mb-4"
-                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  style={{ fontFamily: "'Lemonilla', sans-serif" }}
                 >
                   {para}
                 </p>
               ))}
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 my-8 p-6 rounded-2xl border-2 border-[#0D0D0D] bg-[#F2EDE0]">
+              <div className="grid grid-cols-3 gap-4 my-8 p-6 rounded-2xl border-2 border-[#0D0D0D] bg-[#FFFFFF]">
                 {host.stats.map((s) => (
                   <div key={s.label} className="text-center">
                     <p
                       className="font-display font-black text-xl mb-1 leading-tight"
-                      style={{ fontFamily: "'Fraunces', serif", color: host.color }}
+                      style={{ fontFamily: "'Lucky Goldfish', sans-serif", color: host.color }}
                     >
                       {s.value}
                     </p>
                     <p
                       className="text-xs uppercase tracking-wider text-[#0D0D0D]/60"
-                      style={{ fontFamily: "'DM Sans', sans-serif" }}
+                      style={{ fontFamily: "'Lemonilla', sans-serif" }}
                     >
                       {s.label}
                     </p>
@@ -200,7 +200,7 @@ export default function AboutPage() {
               <div className="mb-8">
                 <p
                   className="text-xs uppercase tracking-widest font-semibold mb-4"
-                  style={{ color: host.color, fontFamily: "'DM Sans', sans-serif" }}
+                  style={{ color: host.color, fontFamily: "'Lemonilla', sans-serif" }}
                 >
                   ✦ Fun Facts
                 </p>
@@ -209,7 +209,7 @@ export default function AboutPage() {
                     <li
                       key={j}
                       className="flex items-start gap-3 text-sm text-[#0D0D0D]/70"
-                      style={{ fontFamily: "'DM Sans', sans-serif" }}
+                      style={{ fontFamily: "'Lemonilla', sans-serif" }}
                     >
                       <StarAccent color={host.color} size={12} className="mt-0.5 shrink-0" />
                       {fact}
@@ -226,7 +226,7 @@ export default function AboutPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm font-semibold px-5 py-2.5 rounded-full border-2 border-[#0D0D0D] hover:opacity-80 transition-all"
-                    style={{ backgroundColor: host.color, color: host.tagText, fontFamily: "'DM Sans', sans-serif" }}
+                    style={{ backgroundColor: host.color, color: host.tagText, fontFamily: "'Lemonilla', sans-serif" }}
                   >
                     {s.label} ↗
                   </a>
@@ -241,26 +241,26 @@ export default function AboutPage() {
       <section className="py-16 px-6 bg-[#0D0D0D] text-center">
         <h2
           className="font-display font-black text-white mb-6"
-          style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 900 }}
+          style={{ fontFamily: "'Lucky Goldfish', sans-serif", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 900 }}
         >
           Want to be on the show?
         </h2>
         <p
-          className="text-[#F2EDE0]/70 text-lg mb-8 max-w-xl mx-auto"
-          style={{ fontFamily: "'DM Sans', sans-serif" }}
+          className="text-[#FFFFFF]/70 text-lg mb-8 max-w-xl mx-auto"
+          style={{ fontFamily: "'Lemonilla', sans-serif" }}
         >
           If you have a creative finance deal worth talking about, we want to hear it.
         </p>
         <Link
           href="/be-our-guest"
-          className="inline-flex items-center gap-2 bg-[#E8176A] text-white font-semibold px-8 py-4 rounded-full border-2 border-[#E8176A] hover:bg-[#B5D334] hover:text-[#0D0D0D] hover:border-[#B5D334] transition-all hover-lift"
-          style={{ fontFamily: "'DM Sans', sans-serif" }}
+          className="inline-flex items-center gap-2 bg-[#EC99AF] text-white font-semibold px-8 py-4 rounded-full border-2 border-[#EC99AF] hover:bg-[#53885E] hover:text-[#0D0D0D] hover:border-[#53885E] transition-all hover-lift"
+          style={{ fontFamily: "'Lemonilla', sans-serif" }}
         >
           Apply to Be a Guest →
         </Link>
       </section>
 
-      <Marquee bgColor="#E8176A" textColor="#FFFFFF" />
+      <Marquee bgColor="#EC99AF" textColor="#FFFFFF" />
       <Footer />
     </>
   );

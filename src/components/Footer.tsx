@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0D0D0D] text-[#F2EDE0] border-t-2 border-[#0D0D0D]">
+    <footer className="bg-[#0D0D0D] text-[#FFFFFF] border-t-2 border-[#0D0D0D]">
       {/* Pink bar */}
-      <div className="bg-[#E8176A] py-4 px-6 text-center">
-        <p className="font-display font-black text-white text-lg italic" style={{ fontFamily: "'Fraunces', serif" }}>
+      <div className="bg-[#EC99AF] py-4 px-6 text-center">
+        <p className="font-display font-black text-white text-lg italic" style={{ fontFamily: "'Lucky Goldfish', sans-serif" }}>
           Real Stories. Real Deals. Real Community. ✦
         </p>
       </div>
@@ -15,16 +15,16 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <div className="mb-3">
-            <Image src="/images/logo.png" alt="REI Baddies Talk Show" width={64} height={64} className="rounded-full border-2 border-[#F2EDE0]/20" />
+            <Image src="/images/logo.png" alt="REI Baddies Talk Show" width={64} height={64} className="rounded-full border-2 border-[#FFFFFF]/20" />
           </div>
-          <p className="text-[#F2EDE0]/70 text-sm leading-relaxed" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="text-[#FFFFFF]/70 text-sm leading-relaxed" style={{ fontFamily: "'Lemonilla', sans-serif" }}>
             Hosted by Rachel Davis & Kate Baldwin. Creative financing, real deals, no fluff.
           </p>
         </div>
 
         {/* Links */}
         <div>
-          <p className="text-xs uppercase tracking-widest text-[#B5D334] mb-4 font-semibold" style={{ fontFamily: "'DM Sans', sans-serif" }}>Navigate</p>
+          <p className="text-xs uppercase tracking-widest text-[#53885E] mb-4 font-semibold" style={{ fontFamily: "'Lemonilla', sans-serif" }}>Navigate</p>
           <ul className="flex flex-col gap-2">
             {[
               { href: "/", label: "Home" },
@@ -35,7 +35,7 @@ export default function Footer() {
               { href: "/contact", label: "Contact" },
             ].map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="text-sm text-[#F2EDE0]/70 hover:text-[#B5D334] transition-colors" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                <Link href={l.href} className="text-sm text-[#FFFFFF]/70 hover:text-[#53885E] transition-colors" style={{ fontFamily: "'Lemonilla', sans-serif" }}>
                   {l.label}
                 </Link>
               </li>
@@ -45,17 +45,18 @@ export default function Footer() {
 
         {/* Social */}
         <div>
-          <p className="text-xs uppercase tracking-widest text-[#B5D334] mb-4 font-semibold" style={{ fontFamily: "'DM Sans', sans-serif" }}>Follow Us</p>
+          <p className="text-xs uppercase tracking-widest text-[#53885E] mb-4 font-semibold" style={{ fontFamily: "'Lemonilla', sans-serif" }}>Follow Us</p>
           <ul className="flex flex-col gap-2">
-            {[
-              { href: "https://youtube.com/@reibaddies", label: "YouTube" },
-              { href: "https://instagram.com/reibaddiesshow", label: "Instagram" },
-              { href: "https://tiktok.com/@reibaddies", label: "TikTok" },
-              { href: "https://podcasts.apple.com", label: "Apple Podcasts" },
-              { href: "https://spotify.com", label: "Spotify" },
+            [
+              { href: "https://www.youtube.com/@REIBaddies", label: "YouTube" },
+              { href: "https://www.instagram.com/reibaddies", label: "Instagram" },
+              { href: "https://www.tiktok.com/@reibaddies", label: "TikTok" },
+              { href: "https://open.spotify.com/show/3t2X6HbjA2c3NokCAnLLhE", label: "Spotify" },
+              { href: "https://www.facebook.com/reibaddies", label: "Facebook" },
+              { href: "https://www.linkedin.com/groups/14918025/", label: "LinkedIn" },
             ].map((l) => (
               <li key={l.label}>
-                <a href={l.href} target="_blank" rel="noopener noreferrer" className="text-sm text-[#F2EDE0]/70 hover:text-[#B5D334] transition-colors" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                <a href={l.href} target="_blank" rel="noopener noreferrer" className="text-sm text-[#FFFFFF]/70 hover:text-[#53885E] transition-colors" style={{ fontFamily: "'Lemonilla', sans-serif" }}>
                   {l.label} ↗
                 </a>
               </li>
@@ -64,8 +65,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-[#F2EDE0]/10 px-6 py-5 text-center">
-        <p className="text-xs text-[#F2EDE0]/40" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+      <div className="border-t border-[#FFFFFF]/10 px-6 py-5 text-center">
+        <p className="text-xs text-[#FFFFFF]/40" style={{ fontFamily: "'Lemonilla', sans-serif" }}>
           © {new Date().getFullYear()} REI Baddies Talk Show. All rights reserved.
         </p>
       </div>

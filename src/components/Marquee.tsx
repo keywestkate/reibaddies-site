@@ -26,7 +26,7 @@ const defaultItems = [
 
 export default function Marquee({
   text = defaultItems,
-  bgColor = "#E8176A",
+  bgColor = "#EC99AF",
   textColor = "#FFFFFF",
   borderColor = "#0D0D0D",
 }: MarqueeProps) {
@@ -42,7 +42,7 @@ export default function Marquee({
           <span
             key={i}
             className="text-sm font-semibold uppercase tracking-widest px-4 shrink-0"
-            style={{ color: textColor, fontFamily: "'DM Sans', sans-serif" }}
+            style={{ color: textColor, fontFamily: "'Lemonilla', sans-serif" }}
           >
             {item}
           </span>

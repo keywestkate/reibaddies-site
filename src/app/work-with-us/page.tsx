@@ -7,7 +7,7 @@ import Link from "next/link";
 const opportunities = [
   {
     title: "Podcast Sponsorship",
-    color: "#E8176A",
+    color: "#EC99AF",
     textColor: "#FFFFFF",
     desc: "Get your brand in front of 1M+ creative finance investors. We only partner with brands we actually use and believe in. No fluff. No fake endorsements.",
     includes: [
@@ -20,7 +20,7 @@ const opportunities = [
   },
   {
     title: "Community Partnership",
-    color: "#B5D334",
+    color: "#53885E",
     textColor: "#0D0D0D",
     desc: "Already in SubTo, Gator, or DealSauce? Let&apos;s build something together. We partner with educators and community leaders who share our values.",
     includes: [
@@ -33,7 +33,7 @@ const opportunities = [
   },
   {
     title: "Speaking & Events",
-    color: "#2A5C2E",
+    color: "#53885E",
     textColor: "#FFFFFF",
     desc: "Book Rachel or Kate (or both) for your mastermind, conference, or event. We speak on creative finance, deal structure, community building, and the baddie mindset.",
     includes: [
@@ -52,30 +52,30 @@ export default function WorkWithUsPage() {
       <Nav />
 
       {/* Hero */}
-      <section className="pt-16 bg-[#F2EDE0] py-24 px-6">
+      <section className="pt-16 bg-[#FFFFFF] py-24 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <div
             className="inline-flex items-center gap-2 bg-[#0D0D0D] text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full border-2 border-[#0D0D0D] mb-8"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
+            style={{ fontFamily: "'Lemonilla', sans-serif" }}
           >
-            <StarAccent size={12} color="#B5D334" />
+            <StarAccent size={12} color="#53885E" />
             Partnerships & Sponsorships
           </div>
           <h1
             className="font-display font-black leading-[0.92] mb-8"
             style={{
-              fontFamily: "'Fraunces', serif",
+              fontFamily: "'Lucky Goldfish', sans-serif",
               fontSize: "clamp(3rem, 8vw, 6rem)",
               fontWeight: 900,
             }}
           >
             <span className="block text-[#0D0D0D]">Work With</span>
-            <span className="block text-[#E8176A] italic">Goal-Driven</span>
+            <span className="block text-[#EC99AF] italic">Goal-Driven</span>
             <span className="block text-[#0D0D0D]">Brands</span>
           </h1>
           <p
             className="text-xl text-[#0D0D0D]/70 max-w-2xl mx-auto leading-relaxed"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
+            style={{ fontFamily: "'Lemonilla', sans-serif" }}
           >
             We partner with brands, educators, and community leaders who are ready to stop playing small and reach an audience of serious real estate investors.
           </p>
@@ -89,7 +89,7 @@ export default function WorkWithUsPage() {
         <div className="max-w-7xl mx-auto">
           <h2
             className="font-display font-black mb-12 text-center"
-            style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 900 }}
+            style={{ fontFamily: "'Lucky Goldfish', sans-serif", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 900 }}
           >
             Ways to Partner
           </h2>
@@ -103,13 +103,13 @@ export default function WorkWithUsPage() {
                 <div className="p-8">
                   <h3
                     className="font-display font-black text-2xl mb-3"
-                    style={{ fontFamily: "'Fraunces', serif" }}
+                    style={{ fontFamily: "'Lucky Goldfish', sans-serif" }}
                   >
                     {opp.title}
                   </h3>
                   <p
                     className="text-sm text-[#0D0D0D]/70 leading-relaxed mb-6"
-                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                    style={{ fontFamily: "'Lemonilla', sans-serif" }}
                   >
                     {opp.desc}
                   </p>
@@ -118,7 +118,7 @@ export default function WorkWithUsPage() {
                       <li
                         key={item}
                         className="flex items-center gap-2 text-sm text-[#0D0D0D]"
-                        style={{ fontFamily: "'DM Sans', sans-serif" }}
+                        style={{ fontFamily: "'Lemonilla', sans-serif" }}
                       >
                         <StarAccent color={opp.color} size={12} />
                         {item}
@@ -131,7 +131,7 @@ export default function WorkWithUsPage() {
                     style={{
                       backgroundColor: opp.color,
                       color: opp.textColor,
-                      fontFamily: "'DM Sans', sans-serif",
+                      fontFamily: "'Lemonilla', sans-serif",
                     }}
                   >
                     {opp.cta}
@@ -147,14 +147,14 @@ export default function WorkWithUsPage() {
       <section className="py-20 px-6 bg-[#0D0D0D]">
         <div className="max-w-5xl mx-auto text-center">
           <p
-            className="text-xs uppercase tracking-widest font-semibold text-[#B5D334] mb-6"
-            style={{ fontFamily: "'DM Sans', sans-serif" }}
+            className="text-xs uppercase tracking-widest font-semibold text-[#53885E] mb-6"
+            style={{ fontFamily: "'Lemonilla', sans-serif" }}
           >
             ✦ Our Audience
           </p>
           <h2
             className="font-display font-black text-white mb-12"
-            style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 900 }}
+            style={{ fontFamily: "'Lucky Goldfish', sans-serif", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 900 }}
           >
             Who You&apos;re Reaching
           </h2>
@@ -167,14 +167,14 @@ export default function WorkWithUsPage() {
             ].map((s) => (
               <div key={s.label}>
                 <p
-                  className="font-display font-black text-4xl text-[#E8176A] mb-2"
-                  style={{ fontFamily: "'Fraunces', serif" }}
+                  className="font-display font-black text-4xl text-[#EC99AF] mb-2"
+                  style={{ fontFamily: "'Lucky Goldfish', sans-serif" }}
                 >
                   {s.value}
                 </p>
                 <p
-                  className="text-xs uppercase tracking-widest text-[#F2EDE0]/50"
-                  style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  className="text-xs uppercase tracking-widest text-[#FFFFFF]/50"
+                  style={{ fontFamily: "'Lemonilla', sans-serif" }}
                 >
                   {s.label}
                 </p>
@@ -185,30 +185,30 @@ export default function WorkWithUsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 px-6 bg-[#E8176A] text-center">
+      <section className="py-16 px-6 bg-[#EC99AF] text-center">
         <StarAccent color="#FFFFFF" size={36} className="mx-auto mb-6" />
         <h2
           className="font-display font-black text-white mb-4"
-          style={{ fontFamily: "'Fraunces', serif", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 900 }}
+          style={{ fontFamily: "'Lucky Goldfish', sans-serif", fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: 900 }}
         >
           Ready to Partner?
         </h2>
         <p
           className="text-white/80 text-lg mb-8 max-w-xl mx-auto"
-          style={{ fontFamily: "'DM Sans', sans-serif" }}
+          style={{ fontFamily: "'Lemonilla', sans-serif" }}
         >
           We&apos;re selective about who we work with. If your brand serves serious investors, let&apos;s talk.
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 bg-white text-[#0D0D0D] font-semibold px-10 py-4 rounded-full border-2 border-[#0D0D0D] hover:bg-[#B5D334] transition-all hover-lift"
-          style={{ fontFamily: "'DM Sans', sans-serif" }}
+          className="inline-flex items-center gap-2 bg-white text-[#0D0D0D] font-semibold px-10 py-4 rounded-full border-2 border-[#0D0D0D] hover:bg-[#53885E] transition-all hover-lift"
+          style={{ fontFamily: "'Lemonilla', sans-serif" }}
         >
           Get In Touch →
         </Link>
       </section>
 
-      <Marquee bgColor="#B5D334" textColor="#0D0D0D" />
+      <Marquee bgColor="#53885E" textColor="#0D0D0D" />
       <Footer />
     </>
   );
