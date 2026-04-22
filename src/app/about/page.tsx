@@ -4,6 +4,10 @@ import Marquee from "@/components/Marquee";
 import StarAccent from "@/components/StarAccent";
 import Image from "next/image";
 import Link from "next/link";
+import KateCharacter from "@/components/KateCharacter";
+import RachelCharacter from "@/components/RachelCharacter";
+import OwnersClubBadge from "@/components/OwnersClubBadge";
+import Pennant from "@/components/Pennant";
 
 const hosts = [
   {
@@ -236,6 +240,24 @@ export default function AboutPage() {
           </div>
         </section>
       ))}
+
+      {/* Characters + Owners Club */}
+      <section className="py-16 px-6 bg-[#FFFFFF]">
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+          <div className="flex flex-col items-center gap-2">
+            <RachelCharacter size={140} />
+            <Pennant text="RACHEL" color="#53885E" textColor="#FFFFFF" size="sm" rotate={-4} />
+          </div>
+          <div className="flex flex-col items-center gap-2">
+            <OwnersClubBadge size={130} />
+            <p className="text-xs uppercase tracking-widest text-[#0D0D0D]/50 mt-2" style={{ fontFamily: "'Lemonilla', sans-serif" }}>Owners Club</p>
+          </div>
+          <div className="flex flex-col items-center gap-2">
+            <KateCharacter size={140} />
+            <Pennant text="KATE" color="#EC99AF" textColor="#FFFFFF" size="sm" rotate={4} />
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="py-16 px-6 bg-[#0D0D0D] text-center">

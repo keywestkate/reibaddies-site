@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import Marquee from "@/components/Marquee";
 import StarAccent from "@/components/StarAccent";
 import Link from "next/link";
+import SubToPeaceSign from "@/components/SubToPeaceSign";
+import HotelKeyCharm from "@/components/HotelKeyCharm";
 
 const opportunities = [
   {
@@ -83,6 +85,16 @@ export default function WorkWithUsPage() {
       </section>
 
       <Marquee />
+
+      {/* Brand elements strip */}
+      <section className="py-10 px-6 bg-white border-b-2 border-[#0D0D0D]">
+        <div className="max-w-4xl mx-auto flex items-end justify-center gap-10 flex-wrap">
+          <SubToPeaceSign size={80} color="#EC99AF" />
+          <HotelKeyCharm text="REI" subtext="BADDIES" color="#53885E" size={90} />
+          <HotelKeyCharm text="DEAL" subtext="SAUCE" color="#EC99AF" size={90} />
+          <SubToPeaceSign size={80} color="#53885E" />
+        </div>
+      </section>
 
       {/* Opportunities */}
       <section className="py-20 px-6 bg-white">
