@@ -47,7 +47,7 @@ export default function Footer() {
         <div>
           <p className="text-xs uppercase tracking-widest text-[#53885E] mb-4 font-semibold" style={{ fontFamily: "'Lemonilla', sans-serif" }}>Follow Us</p>
           <ul className="flex flex-col gap-2">
-            [
+            {[
               { href: "https://www.youtube.com/@REIBaddies", label: "YouTube" },
               { href: "https://www.instagram.com/reibaddies", label: "Instagram" },
               { href: "https://www.tiktok.com/@reibaddies", label: "TikTok" },
